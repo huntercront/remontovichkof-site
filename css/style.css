@@ -588,7 +588,15 @@ body {
 
 .ms-slider {
     overflow: hidden;
-    margin-right: -30px;
+    margin-right: -20%;
+}
+
+.ms-slides {
+    max-width: 25%;
+}
+
+.ms-inner {
+    margin-right: -20%;
 }
 
 .sucses-modal .slider-controls {
@@ -630,7 +638,7 @@ body {
     .ms-slider {
         overflow: hidden;
         margin-right: -30px;
-        margin-left: -0.5rem;
+        margin-left: -30px;
     }
     .sucses-modal .modal-header {
         margin-bottom: 4rem;
@@ -641,6 +649,10 @@ body {
     }
     .ms-text {
         margin-top: 0;
+    }
+    .ms-slides {
+        max-width: 33.33%;
+        padding-left: 18px;
     }
 }
 
@@ -672,9 +684,16 @@ body {
     .sucses-modal .slider-controls {
         display: none;
     }
+    .ms-slides {
+        max-width: 40%;
+    }
 }
 
 @media screen and (max-width:580px) {
+    .ms-slides {
+        max-width: 80%;
+        padding-left: 15px;
+    }
     .modal-header {
         margin-bottom: 1.5rem;
         margin-top: 0;
@@ -728,8 +747,8 @@ body {
         padding: 0.75rem;
     }
     .ms-slider {
-        overflow: hidden;
-        margin: 0 -0.25rem;
+        margin-left: -20px;
+        margin-right: -20px;
     }
     .sucses-modal .modal-header {
         margin-bottom: 2rem;

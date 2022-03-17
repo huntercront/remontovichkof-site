@@ -164,8 +164,11 @@ l.require([
                 956: 3,
             }
         });
-        let nextreviewSlider = document.querySelector('.slider-controls .next');
-        let prevreviewSlider = document.querySelector('.slider-controls .prew');
+        let nextreviewSlider = document.querySelector('.reviews .next');
+        let prevreviewSlider = document.querySelector('.reviews .prew');
+
+        prevreviewSlider.addEventListener('click', () => reviewSlider.prev());
+        nextreviewSlider.addEventListener('click', () => reviewSlider.next());
 
 
         let msSlider = document.querySelector('.ms-inner');
@@ -182,8 +185,6 @@ l.require([
             rtl: false,
             perPage: {
                 300: 1,
-                640: 2,
-                956: 3,
             }
         });
         let nextmodalSlider = document.querySelector('.sucses-modal .next');
@@ -358,7 +359,6 @@ let calculate = document.querySelector('.hero-form .btn.main-btn');
 let toast = document.querySelector('.toast');
 
 let place = document.querySelector('#for');
-let sizeInput = document.querySelector('#place-size');
 let type = document.querySelector('#type');
 let view = document.querySelector('#view');
 let services = document.querySelector('#services');
@@ -369,6 +369,7 @@ let discount = document.querySelector('.discount-value .indicator-line')
 
 var curentK = 1;
 var curentPrice = 0;
+var curentPay = 0;
 
 let dateModal = document.querySelector('.user-data');
 let dateForm = dateModal.querySelector('form')
@@ -397,36 +398,70 @@ consult.addEventListener('click', function(e) {
 
 dateForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    dateModal.classList.remove('open')
 
     let userName = document.querySelector('.modal-form #name')
     let userPhone = document.querySelector('.modal-form #tel')
 
-    let ajaxurl = '../php/mail.php';
-    const data = new FormData();
-    data.append('action', dateForm.getAttribute('from'));
-    data.append('subject', 'Консультация');
-    data.append('name', userName.value);
-    data.append('name', userPhone.value);
-    fetch(ajaxurl, {
-            method: 'POST',
-            body: data,
-        })
-        .then(res => res.text())
-        .then(data => {
-            console.log(data)
-            sucsessModal.classList.add('open')
-            header.classList.add('header-light')
-        })
-        .catch(err => {
-            console.log('error')
-        });
+    var params = {
+        from: dateModal.getAttribute('from'),
+        name: userName.value,
+        phone: userPhone.value,
+        place: place.value,
+        type: type.value,
+        view: view.value,
+        services: services.value,
+        placesize: parseInt(placeSize.value),
+        expectedprice: parseInt(curentPay)
+    };
+    var url = "../php/mail.php?data=" + encodeURIComponent(JSON.stringify(params));;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("get", url, true);
+    xhttp.setRequestHeader('Content-Type', 'application/json');
+    xhttp.onload = function() {
+        if (xhttp.readyState == 4 && xhttp.status === 200 && xhttp.responseText) {
+            dateModal.classList.remove('open');
+            sucsessModal.classList.add('open');
+        } else if (xhttp.status !== 200 || !xhttp.responseText) {
 
+        }
+    };
+    xhttp.send();
 })
+
+let inlineForm = document.querySelector('.inline-form');
+let inlineFormSubmit = document.querySelector('.inline-form .btn')
+inlineForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let userName = inlineForm.querySelector('#name-land')
+    let userPhone = inlineForm.querySelector('#tel-land')
+
+    var params = {
+        from: 'inline',
+        name: userName.value,
+        phone: userPhone.value
+    };
+    var url = "../php/mail.php?data=" + encodeURIComponent(JSON.stringify(params));;
+    xhttp = new XMLHttpRequest();
+    xhttp.open("get", url, true);
+    xhttp.setRequestHeader('Content-Type', 'application/json');
+    xhttp.onload = function() {
+        if (xhttp.readyState == 4 && xhttp.status === 200 && xhttp.responseText) {
+            sucsessModal.classList.add('open');
+        } else if (xhttp.status !== 200 || !xhttp.responseText) {
+
+        }
+    };
+    xhttp.send();
+})
+
+
+
+
 
 calculate.addEventListener('click', function(e) {
 
-    if (place.value == '' || sizeInput.value == '') {
+    if (place.value == '' || placeSize.value == '') {
         toast.classList.add('error');
         setTimeout(() => {
             toast.classList.remove('error');
@@ -457,7 +492,7 @@ function updatePrice() {
     let curentPlaceSumm = selectedType.getAttribute('curent-price');
     if (curentPlaceSumm != 0 && placeSize.value != '') {
         console.log(rounded(curentPlaceSumm * placeSize.value * curentK));
-        let curentPay = rounded(curentPlaceSumm * placeSize.value * curentK)
+        curentPay = rounded(curentPlaceSumm * placeSize.value * curentK)
         let actualDiscount = rounded(curentPlaceSumm * placeSize.value * curentK / 100 * 25)
         discountText.textContent = actualDiscount + 'руб.';
         discount.style.width = curentK * 25 + '%';
