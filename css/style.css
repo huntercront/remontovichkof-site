@@ -1789,6 +1789,7 @@ body {
     transition: 200ms ease-in;
     transition-property: color;
     white-space: nowrap;
+    color: var(--black);
 }
 
 .tab-btn:hover {
