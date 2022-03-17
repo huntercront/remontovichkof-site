@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Готовые решения для новостроек</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./font/stylesheet.css">
+ </head>
+
+ <body class="loading">
+
+
+
+  <div class="modal user-data" data-modal="request">
+   <div class="modal-dialog">
+    <div class="container">
+     <div class="modal-header">
+      <h2 class="title-h2">Оформление заявки на расчёт</h2>
+      <button class="btn-icon close-modal"><i class="icon-s c-c">
+							<img src="./img/x-icon.svg" alt="">
+						</i></button>
+     </div>
+     <div class="modal-content">
+      <div class="m-col-2">
+       <div class="modal-img">
+        <img src="./img/modal-img.svg" alt="Человек с копилкой">
+       </div>
+       <div class="modal-form">
+        <h4 class="title-h4">Бесплатно проконсультируем по ремонтным вопросам</h4>
+        <form action="user-date" method="post">
+         <div class="inputs-row inpits-2">
+          <div class="input text with-icon">
+           <div class="input-inner">
+            <label for="name">
+													<span class="label">Введите имя</span>
+													<input type="text" name="name" id="name" required>
+													<span class="input-icon">
+														<i class="icon-s c-c">
+															<img src="./img/input-user.svg" alt="">
+														</i>
+													</span>
+											</div>
+											</label>
+           </div>
+
+           <div class="input text with-icon">
+            <div class="input-inner">
+             <label for="tel">
+													<span class="label">Номер телефона</span>
+													<input type="tel" name="tel" id="tel" required>
+													<span class="input-icon">
+														<i class="icon-s c-c">
+															<img src="./img/input-phone.svg" alt="">
+														</i>
+													</span>
+											</div>
+											</label>
+            </div>
+           </div>
+
+           <div class="input checkbox">
+            <div class="input-inner">
+             <input type="checkbox" id="personal-data-modal" required checked>
+             <label for="personal-data-modal" class="descr">
+														<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect x="0.5" y="0.5" width="19" height="19" rx="3.5" stroke="#1CB13D" />
+															<path class="check-mark" d="M5 10.5L8.5 14L15.5 7" stroke="#242D39" stroke-linecap="round" stroke-linejoin="round" />
+														</svg>
+														Нажимая на кнопку вы даете согласие на обработку персональных данных</label>
+            </div>
+           </div>
+           <button class="btn main-btn">Оставить заявку</button>
+        </form>
+        </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+
+
+    <div class="modal sucses-modal" data-modal="sucses">
+     <div class="modal-dialog">
+      <div class="container">
+       <div class="modal-header">
+        <h2 class="title-h2">Спасибо, ваши данные отправлены!</h2>
+        <button class="btn-icon close-modal"><i class="icon-s c-c">
+										<img src="./img/x-icon.svg" alt="">
+									</i></button>
+       </div>
+
+       <div class="modal-slider">
+        <div class="ms-text">
+         <h4 class="title-h4">А пока вы можете посмотреть отзывы похожих объектов</h4>
+        </div>
+        <div class="ms-slider">
+         <div class="ms-inner">
+          <div class="review-card">
+           <div class="review-meta">
+            <span class="time text-s">15.07.2021</span>
+            <span class="city text-s">г. Москва</span>
+           </div>
+           <div class="review-text">
+            <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
+            <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
+
+           </div>
+           <div class="review-galery">
+            <div class="review-photo">
+             <img src="./img/image_1.jpg" alt="">
+            </div>
+            <div class="review-photo">
+             <img src="./img/image_1-1.jpg" alt="">
+            </div>
+            <div class="review-photo">
+             <img src="./img/image_1-2.jpg" alt="">
+            </div>
+           </div>
+           <div class="review-author">
+            <div class="user c-s">
+             <div class="user-photo c-c">
+              <img src="./img/user-icon.svg" alt="">
+             </div>
+             <span class="user-name text-sm">Иван Сергеевич</span>
+            </div>
+            <div class="rating"></div>
+           </div>
+          </div>
+
+
+          <div class="review-card">
+           <div class="review-meta">
+            <span class="time text-s">15.07.2021</span>
+            <span class="city text-s">г. Москва</span>
+           </div>
+           <div class="review-text">
+            <h4 class="review-title title-h5">Ремонт под ключ на пр. Авиаконструкторов</h4>
+            <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
+
+           </div>
+
+           <div class="review-galery">
+            <div class="review-photo">
+             <img src="./img/image_1.jpg" alt="">
+            </div>
+            <div class="review-photo">
+             <img src="./img/image_1-1.jpg" alt="">
+            </div>
+            <div class="review-photo">
+             <img src="./img/image_1-2.jpg" alt="">
+            </div>
+           </div>
+
+           <div class="review-author">
+            <div class="user c-s">
+             <div class="user-photo c-c">
+              <img src="./img/user-icon.svg" alt="">
+             </div>
+             <span class="user-name text-sm">Иван Сергеевич</span>
+            </div>
+            <div class="rating"></div>
+           </div>
+          </div>
+
+
+          <div class="review-card">
+           <div class="review-meta">
+            <span class="time text-s">15.07.2021</span>
+            <span class="city text-s">г. Москва</span>
+           </div>
+           <div class="review-text">
+            <h4 class="review-title title-h5">Ремонт кухни на Дзержинского</h4>
+            <p class="text-sm">Кухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели приехали и установиКухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели
+             приехали и установи...Кухня - просто нечто! Сергей и Анатолий - профессионалы своего дела.
+            </p>
+           </div>
+
+           <div class="review-author">
+            <div class="user c-s">
+             <div class="user-photo c-c">
+              <img src="./img/user-icon.svg" alt="">
+             </div>
+             <span class="user-name text-sm">Иван Сергеевич</span>
+            </div>
+            <div class="rating"></div>
+           </div>
+          </div>
+
+
+
+          <div class="review-card">
+           <div class="review-meta">
+            <span class="time text-s">15.07.2021</span>
+            <span class="city text-s">г. Москва</span>
+           </div>
+           <div class="review-text">
+            <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
+            <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
+           </div>
+           <div class="review-galery">
+            <div class="review-photo">
+             <img src="./img/image_1.jpg" alt="">
+            </div>
+            <div class="review-photo">
+             <img src="./img/image_1-1.jpg" alt="">
+            </div>
+            <div class="review-photo">
+             <img src="./img/image_1-2.jpg" alt="">
+            </div>
+           </div>
+           <div class="review-author">
+            <div class="user c-s">
+             <div class="user-photo c-c">
+              <img src="./img/user-icon.svg" alt="">
+             </div>
+             <span class="user-name text-sm">Иван Сергеевич</span>
+            </div>
+            <div class="rating"></div>
+           </div>
+          </div>
+
+
+
+          <div class="review-card">
+           <div class="review-meta">
+            <span class="time text-s">15.07.2021</span>
+            <span class="city text-s">г. Москва</span>
+           </div>
+           <div class="review-text">
+            <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
+            <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
+           </div>
+           <div class="review-galery">
+            <div class="review-photo">
+             <img src="./img/image_1.jpg" alt="">
+            </div>
+            <div class="review-photo">
+             <img src="./img/image_1-1.jpg" alt="">
+            </div>
+            <div class="review-photo">
+             <img src="./img/image_1-2.jpg" alt="">
+            </div>
+           </div>
+           <div class="review-author">
+            <div class="user c-s">
+             <div class="user-photo c-c">
+              <img src="./img/user-icon.svg" alt="">
+             </div>
+             <span class="user-name text-sm">Иван Сергеевич</span>
+            </div>
+            <div class="rating"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="slider-controls e-e">
+        <div class="buttons c-s">
+         <button class="slide-button prew c-c"><i class="icon icon-sm c-c"><svg width="20" height="20"
+					viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M18 10H2" stroke="white" stroke-linecap="round"></path>
+					<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
+			</i></button>
+         <button class="slide-button next c-c">
+			<i class="icon icon-sm c-c"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M18 10H2" stroke="white" stroke-linecap="round"></path>
+					<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
+			</i>
+		</button>
+        </div>
+       </div>
+
+      </div>
+     </div>
+    </div>
+
+
+    <div class="modal calc-modal" data-modal="calculate">
+     <div class="modal-dialog">
+      <div class="container">
+       <div class="modal-header">
+        <h2 class="title-h2">Предварительный расчёт:</h2>
+        <button class="btn-icon close-modal"><i class="icon-s c-c">
+								<img src="./img/x-icon.svg" alt="">
+							</i></button>
+       </div>
+       <div class="modal-content">
+        <div class="m-col-2 price-details">
+         <div class="modal-img">
+          <img src="./img/modal-img.svg" alt="Человек с копилкой">
+         </div>
+
+         <div class="calc-date">
+          <div class="price-info descr">
+           «Косметический» ремонт квартиры, площадью <strong><span class="size">112</span> м2</strong> займет <strong><span class="days">45</span> дней</strong> и его примерная стоимость ремонтных работ составит от <strong><span class="start-price">361 368</span></strong>           до <strong><span  class="end-price">534 101</span> рублей.</strong>
+          </div>
+          <div class="discount-info c-s">
+           <div class="discount-icon c-c">
+            <img src="./img/money-icon.svg" alt="">
+           </div>
+           <div class="discount-text">
+            <div class="text-sm">Скидка не учтена и составит:</div>
+            <div class="title-h4">
+             <span class="discount-number brand">36 137</span> рублей.</div>
+           </div>
+          </div>
+
+          <div class="about-calc">
+           <h4 class="title-h4">Это не финальная цена!</h4>
+           <p class="descr">Калькулятор рассчитал примерную стоимость ремонта квартиры. Точная стоимость скорее всего будет меньше.</p>
+           <button class="btn main-btn">Оставить заявку</button>
+          </div>
+
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+
+
+
+    <header class="header">
+     <div class="header-inner">
+      <div class="logo-wrap c-s">
+       <a href="#" class="logo">
+        <picture>
+         <source type="image/svg+xml" media="(min-width: 581px)" srcset="./img/Logo.svg">
+         <source type="image/svg+xml" media="(max-width: 580px)" srcset="./img/Logo-m.svg"> <img width="266" height="64" alt="Логотип" src="./img/Logo.svg">
+        </picture>
+       </a>
+      </div>
+      <nav class="nav c-c">
+       <ul class="nav-list c-c">
+        <li>
+         <a href="">О нас</a>
+        </li>
+        <li>
+         <a href="">Наши работы</a>
+        </li>
+        <li>
+         <a href="">Отзывы</a>
+        </li>
+        <li>
+         <a href="">Контакты</a>
+        </li>
+       </ul>
+      </nav>
+      <div class="m-controls c-s">
+       <a href="tel:8 800 555 33 44" class="call-link c-s">
+        <div class="call-text">
+         <div class="title-h4">8 800 555 33 44</div>
+         <div class="text-s">Звонок бесплатный</div>
+        </div>
+        <div class="call-icon">
+         <i class="icon-s c-c">
+									<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M9.325 2.336a2 2 0 0 1 1.958-.995l1.54.17c.915.102 1.707.858 1.56 1.872-.227 1.56-1.057 4.244-3.906 7.093-2.85 2.85-5.534 3.68-7.094 3.907-1.014.147-1.77-.645-1.871-1.56l-.171-1.54a2 2 0 0 1 .995-1.958l1.027-.587a2 2 0 0 1 2.407.323l.03.03c.291.292.653.363.928.217a6.178 6.178 0 0 0 1.468-1.112 6.179 6.179 0 0 0 1.112-1.468c.145-.275.075-.637-.217-.928l-.03-.03a2 2 0 0 1-.323-2.407l.587-1.027Zm1.87-.2a1.2 1.2 0 0 0-1.175.597L9.433 3.76a1.2 1.2 0 0 0 .193 1.444l.03.03c.465.465.713 1.197.36 1.868a6.974 6.974 0 0 1-1.254 1.66 6.976 6.976 0 0 1-1.66 1.254c-.671.354-1.403.105-1.868-.36l-.03-.03a1.2 1.2 0 0 0-1.444-.193l-1.027.587a1.2 1.2 0 0 0-.597 1.174l.17 1.54c.064.572.495.925.962.857 1.405-.204 3.926-.964 6.643-3.68 2.717-2.718 3.476-5.238 3.68-6.643.068-.468-.285-.898-.857-.961l-1.54-.171Z"
+											fill="#F8F8FB" />
+									</svg>
+								</i>
+        </div>
+       </a>
+       <button class="m-menu">
+							<div class="icon-open c-c"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M1.6 12.8a.4.4 0 0 1 .4-.4h12a.4.4 0 1 1 0 .8H2a.4.4 0 0 1-.4-.4Zm0-6.4c0-.221.18-.4.4-.4h12a.4.4 0 0 1 0 .8H2a.4.4 0 0 1-.4-.4Zm0-3.2c0-.221.18-.4.4-.4h12a.4.4 0 0 1 0 .8H2a.4.4 0 0 1-.4-.4Zm0 6.4c0-.221.18-.4.4-.4h12a.4.4 0 0 1 0 .8H2a.4.4 0 0 1-.4-.4Z"
+										fill="#F8F8FB" />
+								</svg></div>
+							<div class="icon-close c-c">
+								<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M3.717 3.717a.4.4 0 0 1 .566 0L8 7.434l3.717-3.717a.4.4 0 1 1 .566.566L8.566 8l3.717 3.717a.4.4 0 0 1-.566.566L8 8.566l-3.717 3.717a.4.4 0 0 1-.566-.566L7.434 8 3.717 4.283a.4.4 0 0 1 0-.566Z"
+										fill="#F8F8FB" />
+								</svg>
+							</div>
+						</button>
+      </div>
+
+     </div>
+    </header>
+
+
+
+    <main class="main">
+     <section class="hero">
+      <div class="hero-slider h-fix">
+       <div class="hero-slide" style="background-image: url('./img/hero-slide-1.jpg');">
+        <div class="container">
+         <h1 class="title-h1">
+          Готовые решения для новостроек
+         </h1>
+        </div>
+       </div>
+       <div class="hero-slide" style="background-image: url('./img/hero-slide-2.jpg');">
+        <div class="container">
+         <h1 class="title-h1">
+          Ремонт вашей кухни от 2500 руб/м2
+         </h1>
+        </div>
+       </div>
+
+       <div class="hero-slide" style="background-image: url('./img/hero-slide-3.jpg');">
+        <div class="container">
+         <h1 class="title-h1">
+          Ремонт и отделка загородного дома
+         </h1>
+        </div>
+       </div>
+
+       <div class="hero-slide" style="background-image: url('./img/hero-slide-4.jpg');">
+        <div class="container">
+         <h1 class="title-h1">
+          Опытные бригады для ремонта без суеты
+         </h1>
+        </div>
+       </div>
+
+       <div class="hero-slide" style="background-image: url('./img/hero-slide-5.jpg');">
+        <div class="container">
+         <h1 class="title-h1">
+          Ремонт офисов<br>под ключ
+         </h1>
+        </div>
+       </div>
+
+      </div>
+      <div class="form-wrapper">
+       <div class="container">
+        <h4 class="title-h4">Рассчитайте стоимость ремонта</h4>
+        <div class="hero-form">
+         <div class="form-inner">
+          <div class="input drop input-dark" curent-price="0">
+           <div class="input-inner">
+            <label for="for">
+													<span class="label">Что нужно отремонтировать</span>
+													<input type="text" name="for" id="for" readonly required>
+													<span class="drop-icon"></span>
+											</div>
+											</label>
+            <div class="drop-zone">
+             <div class="drop-value" data-price="5000">Студия</div>
+             <div class="drop-value" data-price="4700">1-комнатная квартира</div>
+             <div class="drop-value" data-price="4500">2-х комнатная квартира</div>
+             <div class="drop-value" data-price="4400">3-х комнатная квартира</div>
+             <div class="drop-value" data-price="4300">4-х комнатная квартира</div>
+             <div class="drop-value" data-price="5300">Комната</div>
+             <div class="drop-value" data-price="5300">Кухня</div>
+             <div class="drop-value" data-price="6000">Ванная</div>
+             <div class="drop-value" data-price="6000">Туалет</div>
+             <div class="drop-value" data-price="4500">Коридор</div>
+             <div class="drop-value" data-price="4300">Загородный дом</div>
+             <div class="drop-value" data-price="4000">Офис</div>
+            </div>
+           </div>
+
+
+           <div class="input text input-dark">
+            <div class="input-inner">
+             <label for="place-size">
+																	<span class="label">Площадь помещения, м<sup>2</sup></span>
+																	<input type="number" name="place-size" id="place-size" required required>
+															</label>
+            </div>
+           </div>
+
+
+           <div class="input drop input-dark" curent-k="1">
+            <div class="input-inner">
+             <label for="type">
+													<span class="label">Тип недвижимости</span>
+													<input type="text" name="type" id="type" readonly required>
+													<span class="drop-icon"></span>
+											</div>
+											</label>
+             <div class="drop-zone">
+              <div class="drop-value" data-k="1">Новостройка</div>
+              <div class="drop-value" data-k="1.2">Вторичное жильё</div>
+              <div class="drop-value" data-k="1.1">Коммерческая недвижимость</div>
+             </div>
+            </div>
+
+            <div class="input drop input-dark" curent-k="1">
+             <div class="input-inner">
+              <label for="view">
+													<span class="label">Вид ремонта</span>
+													<input type="text" name="view" id="view" readonly required>
+													<span class="drop-icon"></span>
+											</div>
+											</label>
+              <div class="drop-zone">
+               <div class="drop-value" data-k="1.1">Косметический</div>
+               <div class="drop-value" data-k="1">Капитальный</div>
+               <div class="drop-value" data-k="1.2">Под ключ</div>
+              </div>
+             </div>
+
+
+             <div class="input drop input-dark" curent-k="1">
+              <div class="input-inner">
+               <label for="services">
+																	<span class="label">Выберите доп.услуги</span>
+																	<input type="text" name="services" id="services" readonly required>
+																	<span class="drop-icon"></span>
+															</div>
+															</label>
+               <div class="drop-zone">
+                <div class="drop-value" data-k="1.1">Замена электрики</div>
+                <div class="drop-value" data-k="1.1">Замена систем отопления и водоснабжения</div>
+                <div class="drop-value" data-k="1.1">Закупка и доставка стройматериалов</div>
+               </div>
+              </div>
+
+
+
+
+              <div class="calc-indicator days-value">
+               <div class="indicator-label">Срок работ:</div>
+               <div class="indicator-value">&nbsp;</div>
+               <div class="indicator">
+                <div class="indicator-line"></div>
+               </div>
+              </div>
+
+              <div class="calc-indicator discount-value">
+               <div class="indicator-label">Скидка составит:</div>
+               <div class="indicator-value">&nbsp;</div>
+               <div class="indicator">
+                <div class="indicator-line"></div>
+               </div>
+              </div>
+
+              <div class="btn-wrapper">
+               <div class="toast">
+                <div class="toast-content c-s">
+                 <div class="toast-icon c-c">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																																			<path
+																																				d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+																																				stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+																																			<path d="M12 8V12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+																																			<path d="M12 16H12.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+																																		</svg>
+
+                 </div>
+                 <span>Необходимо ввести площадь и тип объекта</span>
+
+                </div>
+               </div>
+               <button class="btn main-btn">Оставить заявку</button>
+              </div>
+
+
+
+             </div>
+             </form>
+
+            </div>
+           </div>
+
+
+     </section>
+
+     <section class="about">
+      <div class="container">
+       <div class="about-grid">
+        <h2 class="title-h2">Ремонтовичко<span class="brand">Ф - <span class="no-wrap">кто мы?</span></span>
+        </h2>
+        <div class="col-1">
+         <div class="about-img about-1"><img src="./img/about_1.jpg" alt=""></div>
+        </div>
+        <div class="col-2">
+         <h5 class="title-h5 w-fix">— крупный цифровой игрок на рынке ремонтно-строительных услуг в РФ и СНГ.
+         </h5>
+         <p class="descr text-1">Мы предлагаем своим клиентам услуги по созданию индивидуальных проектов дизайна, реконструкции и отделке помещений жилого и коммерческого назначения.</p>
+         <div class="about-img about-2"><img src="./img/about_2.jpg" alt=""></div>
+        </div>
+        <div class="col-3">
+         <div class="about-img about-3"><img src="./img/about_3.jpg" alt=""></div>
+
+         <p class="descr w-fix text-2">Тех высот, которые мы достигли, нам удалось добиться благодаря высокому уровню сервиса и качества предоставляемых услуг при сравнительно невысоких ценах.
+         </p>
+         <p class="descr w-fix text-3">Мы все время сравниваем свою эффективность с компаниями-конкурентами, что позволяет нам учиться на собственных и чужих ошибках. Можем утверждать, что готовы реализовывать проекты различной сложности.</p>
+        </div>
+       </div>
+      </div>
+     </section>
+
+     <section class="how-works">
+      <div class="container">
+       <div class="title-line with-buttons">
+        <h2 class="title-h2">Как мы работаем</h2>
+        <div class="buttons buttons-light c-s">
+         <button class="slide-button prew c-c"><i class="icon icon-sm c-c"><svg width="20" height="20"
+									viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M18 10H2" stroke="white" stroke-linecap="round" />
+									<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+							</i></button>
+         <button class="slide-button next c-c">
+							<i class="icon icon-sm c-c"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M18 10H2" stroke="white" stroke-linecap="round" />
+									<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+							</i>
+						</button>
+        </div>
+       </div>
+
+       <div class="slider-wparrer">
+        <div class="how-works-slider">
+         <div class="slider-zone h-fix">
+          <div class="w-slide slide-active" data-title="Позвоните или оставьте заявку" data-text="Наши специалисты перезвонят в течение 5 минут. Проконсультируем, соориентируем по срокам, подскажем примерную стоимость">
+           <h6 class="title-h6">Заявка/Консультация</h6>
+           <span class="time-dot"><span></span></span>
+          </div>
+          <div class="w-slide" data-title="Назначим выезд инженера-сметчика" data-text="Согласуем удобное время дял встречи. Это бесплатно и ни к чему вас не обязывает">
+           <h6 class="title-h6">Выезд инженера</h6>
+           <span class="time-dot"><span></span></span>
+          </div>
+          <div class="w-slide" data-title="Рассчитаем смету" data-text="Произведем замеры и составим точную смету. Проконсультируем по материалам, этапам ремонта. Подскажем на чем можно сэкономить без ущерба качеству.">
+           <h6 class="title-h6">Рассчитываем смету</h6>
+           <span class="time-dot"><span></span></span>
+          </div>
+          <div class="w-slide" data-title="Утверждаем смету и подписываем договор" data-text="После утверждения финальной сметы фиксируем сроки и стоимость в договоре, согласовываем дату выхода мастеров на объект">
+           <h6 class="title-h6">Подписываем договор</h6>
+           <span class="time-dot"><span></span></span>
+          </div>
+          <div class="w-slide" data-title="Приступаем к ремонту" data-text="Работаем строго по плану. На протяжении всего ремонта раз в неделю выставляются акты о проделаннызх работах.">
+           <h6 class="title-h6">Приступаем к ремонту</h6>
+           <span class="time-dot"><span></span></span>
+          </div>
+          <div class="w-slide" data-title="Сдаем объект" data-text="Конец ремонта – долгожданное событие для вас и отчетный период для мастеров. Подписываем финальный акт приема работ.">
+           <h6 class="title-h6">Сдаём объект</h6>
+           <span class="time-dot"><span></span></span>
+          </div>
+
+         </div>
+        </div>
+       </div>
+       <div class="steps-info">
+        <div class="step-title">
+         <span class="step-number">Шаг: <span>1</span></span>
+         <h4 class="title-h4">Позвоните или оставьте заявку</h4>
+        </div>
+        <div class="step-details c-c">
+         <p class="descr">
+          Наши специалисты перезвонят в течение 5 минут. Проконсультируют, сориентируют по срокам, подскажут примерную стоимость
+         </p>
+        </div>
+        <div class="cta e-e">
+         <button class="btn main-btn">Оставить заявку</button>
+        </div>
+       </div>
+      </div>
+     </section>
+
+
+     <section class="portfolio">
+      <div class="container">
+       <h2 class="title-h2">Наши работы</h2>
+       <div class="tabs-line">
+        <button class="tab-btn active" data-tab="1">Санузел</button>
+        <button class="tab-btn" data-tab="2">2 ком-я квартира</button>
+        <span class="tab-indicator"></span>
+       </div>
+
+       <div class="tabs-content">
+
+
+        <div class="tab-content active-tab" tab-content="1">
+         <div class="tab-galery">
+          <div class="buttons c-s">
+           <button class="slide-button prew c-c"><i class="icon icon-sm c-c"><svg width="20"
+											height="20" viewBox="0 0 20 20" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path d="M18 10H2" stroke="white" stroke-linecap="round" />
+											<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</i></button>
+           <button class="slide-button next c-c">
+									<i class="icon icon-sm c-c"><svg width="20" height="20" viewBox="0 0 20 20"
+											fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M18 10H2" stroke="white" stroke-linecap="round" />
+											<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</i>
+								</button>
+          </div>
+          <div class="galery-inner">
+
+           <img src="./img/port-1-1.jpg" width="1020" height="640" alt="">
+           <img src="./img/port-1-1.jpg" width="1020" height="640" alt="">
+           <img src="./img/port-1-1.jpg" width="1020" height="640" alt="">
+           <img src="./img/port-1-1.jpg" width="1020" height="640" alt="">
+          </div>
+         </div>
+         <div class="tab-text">
+          <h3 class="title-h4">Ремонт ванной комнаты на пр. Авиаконструкторов</h3>
+          <p class="descr">Клиент поставил задачу - сделать ремонт за 7 дней, так как хотели сделать приятное хозяйке очага, которая должна была выписаться из больницы...</p>
+         </div>
+        </div>
+
+
+        <div class="tab-content" tab-content="2">
+         <div class="tab-galery">
+          <div class="buttons c-s">
+           <button class="slide-button prew c-c"><i class="icon icon-sm c-c"><svg width="20"
+											height="20" viewBox="0 0 20 20" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path d="M18 10H2" stroke="white" stroke-linecap="round" />
+											<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</i></button>
+           <button class="slide-button next c-c">
+									<i class="icon icon-sm c-c"><svg width="20" height="20" viewBox="0 0 20 20"
+											fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M18 10H2" stroke="white" stroke-linecap="round" />
+											<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</i>
+								</button>
+          </div>
+          <div class="galery-inner">
+
+           <img src="./img/port-1-1.jpg" alt="">
+           <img src="./img/port-1-1.jpg" alt="">
+           <img src="./img/port-1-1.jpg" alt="">
+           <img src="./img/port-1-1.jpg" alt="">
+          </div>
+         </div>
+         <div class="tab-text">
+          <h3 class="title-h4">Ремонт ванной комнаты на пр. Авиаконструкторов</h3>
+          <p class="descr">Клиент поставил задачу - сделать ремонт за 7 дней, так как хотели сделать приятное хозяйке очага, которая должна была выписаться из больницы...</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+
+
+     <section class="help">
+      <div class="container">
+       <div class="help-title">
+        <h3 class="title-h3">Поможем с выбором и доставкой стройматериалов!</h3>
+        <p class="help-sub title-h6">Хотите, мы сами купим и привезем все, что нужно для ремонта?</p>
+       </div>
+       <div class="help-content">
+        <div class="help-img">
+         <img src="./img/help-img-1.jpg" alt="">
+        </div>
+        <div class="help-form">
+         <form action="user-date-2" method="post">
+          <div class="inputs-row inpits-2">
+           <div class="input text with-icon">
+            <div class="input-inner">
+             <label for="name">
+														<span class="label">Введите имя</span>
+														<input type="text" name="name" id="name" required>
+														<span class="input-icon">
+															<i class="icon-s c-c">
+																<img src="./img/input-user.svg" alt="">
+															</i>
+														</span>
+												</div>
+												</label>
+            </div>
+
+            <div class="input text with-icon">
+             <div class="input-inner">
+              <label for="tel-land">
+														<span class="label">Номер телефона</span>
+														<input type="tel" name="tel-land" id="tel-land" required>
+														<span class="input-icon">
+															<i class="icon-s c-c">
+																<img src="./img/input-phone.svg" alt="">
+															</i>
+														</span>
+												</div>
+												</label>
+             </div>
+            </div>
+
+            <div class="input checkbox">
+             <div class="input-inner">
+              <input type="checkbox" id="personal-data-page" required checked>
+              <label for="personal-data-page" class="descr">
+													<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<rect x="0.5" y="0.5" width="19" height="19" rx="3.5" stroke="#1CB13D" />
+														<path class="check-mark" d="M5 10.5L8.5 14L15.5 7" stroke="#242D39" stroke-linecap="round"
+															stroke-linejoin="round" />
+													</svg>
+													Нажимая на кнопку вы даете согласие на обработку персональных данных</label>
+             </div>
+            </div>
+            <button class="btn main-btn">Оставить заявку</button>
+         </form>
+
+         </form>
+         </div>
+         <div class="card-list">
+          <div class="help-card">
+           <div class="icon icon-lg">
+            <img src="./img/consalt.svg" alt="">
+           </div>
+           <p class="title-h6">Консультируем</p>
+           <p class="text-sm">Даем советы по выбору материалов и выезжаем на объект для консультаций.
+           </p>
+
+          </div>
+
+          <div class="help-card">
+           <div class="icon icon-lg">
+            <img src="./img/search.svg" alt="">
+           </div>
+           <p class="title-h6">Проверенные поставщики</p>
+           <p class="text-sm">Работаем только с надежными материалами, а за счёт объемов у нас хорошие цены.
+           </p>
+
+          </div>
+
+          <div class="help-card">
+           <div class="icon icon-lg">
+            <img src="./img/delivery.svg" alt="">
+           </div>
+           <p class="title-h6">Надежная логистика для любого груза</p>
+           <p class="text-sm">Наши партнёры – лидеры на рынке грузовых перевозок!</p>
+
+          </div>
+         </div>
+
+         </div>
+        </div>
+     </section>
+     <section class="reviews">
+      <div class="container">
+
+       <h2 class="title-h2">Отзывы</h2>
+
+       <div class="reviews-slider">
+        <div class="slider-inner h-fix">
+
+
+         <div class="review-card">
+          <div class="review-meta">
+           <span class="time text-s">15.07.2021</span>
+           <span class="city text-s">г. Москва</span>
+          </div>
+          <div class="review-text">
+           <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
+           <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
+
+          </div>
+          <div class="review-galery">
+           <div class="review-photo">
+            <img src="./img/image_1.jpg" alt="">
+           </div>
+           <div class="review-photo">
+            <img src="./img/image_1-1.jpg" alt="">
+           </div>
+           <div class="review-photo">
+            <img src="./img/image_1-2.jpg" alt="">
+           </div>
+          </div>
+          <div class="review-author">
+           <div class="user c-s">
+            <div class="user-photo c-c">
+             <img src="./img/user-icon.svg" alt="">
+            </div>
+            <span class="user-name text-sm">Иван Сергеевич</span>
+           </div>
+           <div class="rating"></div>
+          </div>
+         </div>
+
+
+         <div class="review-card">
+          <div class="review-meta">
+           <span class="time text-s">15.07.2021</span>
+           <span class="city text-s">г. Москва</span>
+          </div>
+          <div class="review-text">
+           <h4 class="review-title title-h5">Ремонт под ключ на пр. Авиаконструкторов</h4>
+           <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
+
+          </div>
+
+          <div class="review-galery">
+           <div class="review-photo">
+            <img src="./img/image_1.jpg" alt="">
+           </div>
+           <div class="review-photo">
+            <img src="./img/image_1-1.jpg" alt="">
+           </div>
+           <div class="review-photo">
+            <img src="./img/image_1-2.jpg" alt="">
+           </div>
+          </div>
+
+          <div class="review-author">
+           <div class="user c-s">
+            <div class="user-photo c-c">
+             <img src="./img/user-icon.svg" alt="">
+            </div>
+            <span class="user-name text-sm">Иван Сергеевич</span>
+           </div>
+           <div class="rating"></div>
+          </div>
+         </div>
+
+
+         <div class="review-card">
+          <div class="review-meta">
+           <span class="time text-s">15.07.2021</span>
+           <span class="city text-s">г. Москва</span>
+          </div>
+          <div class="review-text">
+           <h4 class="review-title title-h5">Ремонт кухни на Дзержинского</h4>
+           <p class="text-sm">Кухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели приехали и установиКухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели
+            приехали и установи...Кухня - просто нечто! Сергей и Анатолий - профессионалы своего дела.
+           </p>
+          </div>
+
+          <div class="review-author">
+           <div class="user c-s">
+            <div class="user-photo c-c">
+             <img src="./img/user-icon.svg" alt="">
+            </div>
+            <span class="user-name text-sm">Иван Сергеевич</span>
+           </div>
+           <div class="rating"></div>
+          </div>
+         </div>
+
+
+
+         <div class="review-card">
+          <div class="review-meta">
+           <span class="time text-s">15.07.2021</span>
+           <span class="city text-s">г. Москва</span>
+          </div>
+          <div class="review-text">
+           <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
+           <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
+          </div>
+          <div class="review-galery">
+           <div class="review-photo">
+            <img src="./img/image_1.jpg" alt="">
+           </div>
+           <div class="review-photo">
+            <img src="./img/image_1-1.jpg" alt="">
+           </div>
+           <div class="review-photo">
+            <img src="./img/image_1-2.jpg" alt="">
+           </div>
+          </div>
+          <div class="review-author">
+           <div class="user c-s">
+            <div class="user-photo c-c">
+             <img src="./img/user-icon.svg" alt="">
+            </div>
+            <span class="user-name text-sm">Иван Сергеевич</span>
+           </div>
+           <div class="rating"></div>
+          </div>
+         </div>
+
+
+
+         <div class="review-card">
+          <div class="review-meta">
+           <span class="time text-s">15.07.2021</span>
+           <span class="city text-s">г. Москва</span>
+          </div>
+          <div class="review-text">
+           <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
+           <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
+          </div>
+          <div class="review-galery">
+           <div class="review-photo">
+            <img src="./img/image_1.jpg" alt="">
+           </div>
+           <div class="review-photo">
+            <img src="./img/image_1-1.jpg" alt="">
+           </div>
+           <div class="review-photo">
+            <img src="./img/image_1-2.jpg" alt="">
+           </div>
+          </div>
+          <div class="review-author">
+           <div class="user c-s">
+            <div class="user-photo c-c">
+             <img src="./img/user-icon.svg" alt="">
+            </div>
+            <span class="user-name text-sm">Иван Сергеевич</span>
+           </div>
+           <div class="rating"></div>
+          </div>
+         </div>
+
+
+
+        </div>
+       </div>
+       <div class="slider-controls e-e">
+        <div class="buttons c-s">
+         <button class="slide-button prew c-c"><i class="icon icon-sm c-c"><svg width="20" height="20"
+									viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M18 10H2" stroke="white" stroke-linecap="round"></path>
+									<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+								</svg>
+							</i></button>
+         <button class="slide-button next c-c">
+							<i class="icon icon-sm c-c"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M18 10H2" stroke="white" stroke-linecap="round"></path>
+									<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+								</svg>
+							</i>
+						</button>
+        </div>
+       </div>
+      </div>
+     </section>
+
+     <section class="contacts">
+      <div class="container">
+       <div class="contacts-grid">
+        <div class="info-col">
+         <h2 class="title-h2">Контакты</h2>
+
+         <div class="contacts-row c-adress">
+          <div class="col-100">
+           <span class="title-sm">Адрес:</span>
+           <p class="title-h6">наб. Обводного канала, д.24 Д, БЦ «Амилен» 1 этаж, офис 28-29</p>
+           <span class="text-s">вход с обводного канала</span>
+          </div>
+         </div>
+
+         <div class="contacts-row c-phones">
+          <div class="col-50">
+           <span class="title-sm">Телефон:</span>
+           <a href="tel:+7 812 748 23 20" class="title-h6">+7 812 748 23 20</a>
+           <span class="text-s">круглосуточно</span>
+          </div>
+          <div class="col-50">
+           <span class="title-sm">Телефон горячей линии:</span>
+           <a href="tel:8 800 555 33 44" class="title-h6">8 800 555 33 44</a>
+           <span class="text-s">круглосуточно</span>
+          </div>
+         </div>
+
+         <div class="contacts-row c-mail">
+          <div class="col-100">
+           <span class="title-sm">Email:</span>
+           <a href="mailto:911@remontovichkof.ru" class="title-h6">911@remontovichkof.ru</a>
+           <span class="text-s">для физических лиц</span>
+          </div>
+         </div>
+
+         <div class="contacts-row social-row">
+          <div class="col-100">
+           <span class="title-sm">Мы в соц.сетях:</span>
+           <div class="socials c-s">
+            <a href="" class="social c-c"><i class="icon-s c-c">
+											<img src="./img/fb.svg" alt="">
+										</i>
+									</a>
+            <a href="" class="social c-c"><i class="icon-s c-c">
+											<img src="./img/inst.svg" alt="">
+										</i>
+									</a>
+            <a href="" class="social c-c"><i class="icon-s c-c">
+											<img src="./img/vk.svg" alt="">
+										</i>
+									</a>
+           </div>
+          </div>
+         </div>
+
+        </div>
+        <div class="map-col">
+         <div class="map-holder">
+          <img src="./img/map-palceholder.jpg" alt="map-palceholder">
+         </div>
+         <div id="map" class="map"></div>
+        </div>
+       </div>
+
+      </div>
+     </section>
+
+    </main>
+
+    <footer class="footer">
+     <div class="container">
+      <div class="footer-content">
+       <div class="footer-line">
+        <a href="#" class="logo">
+         <img src="./img/Logo.svg" alt="">
+        </a>
+        <ul class="no-list footer-nav nav">
+         <li><a href="#">О нас</a></li>
+         <li><a href="#">Наши работы</a></li>
+         <li><a href="#">Отзывы</a></li>
+         <li><a href="#">Контакты</a></li>
+        </ul>
+       </div>
+       <div class="footer-line rights-info">
+        <div class="copiright text-s">© 2021. Все права защищены</div>
+
+        <ul class="no-list nav-adv nav">
+         <li><a href="#" class="c-s text-s"><i class="icon-s left-pos">
+									<img src="./img/mail-icon.svg" alt="">
+								</i>911@remontovichkof.ru</a></li>
+         <li><a class="c-s text-s policy" href="#">Политика конфиденциальности</a></li>
+         <li>
+          <div class="socials c-s">
+           <a href="" class="social c-c"><i class="icon-s c-c">
+										<img src="./img/inst-light.svg" alt="">
+									</i>
+								</a>
+           <a href="" class="social c-c"><i class="icon-s c-c">
+										<img src="./img/vk-light.svg" alt="">
+									</i>
+								</a>
+          </div>
+         </li>
+        </ul>
+       </div>
+
+      </div>
+     </div>
+    </footer>
+ </body>
+ <script src="./js/app.js"></script>
+
+</html>
