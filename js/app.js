@@ -426,7 +426,7 @@ dateForm.addEventListener('submit', function(e) {
         placesize: parseInt(placeSize.value),
         expectedprice: parseInt(curentPay)
     };
-    var url = "../php/mail.php?data=" + encodeURIComponent(JSON.stringify(params));;
+    var url = "../api/mail.php?data=" + encodeURIComponent(JSON.stringify(params));;
     xhttp = new XMLHttpRequest();
     xhttp.open("get", url, true);
     xhttp.setRequestHeader('Content-Type', 'application/json');
@@ -454,7 +454,7 @@ inlineForm.addEventListener('submit', function(e) {
         name: userName.value,
         phone: userPhone.value
     };
-    var url = "../php/mail.php?data=" + encodeURIComponent(JSON.stringify(params));;
+    var url = "../api/mail.php?data=" + encodeURIComponent(JSON.stringify(params));;
     xhttp = new XMLHttpRequest();
     xhttp.open("get", url, true);
     xhttp.setRequestHeader('Content-Type', 'application/json');
