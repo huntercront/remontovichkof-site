@@ -254,26 +254,7 @@ window.addEventListener('scroll', function(e) {
     }
 });
 
-function textSlideDown(elem, speed) {
-    let fontSize = parseFloat(window.getComputedStyle(elem, null).getPropertyValue('font-size'))
-    elem.style.height = elem.scrollHeight / fontSize + 'em';
-    setTimeout(() => {
-        elem.style.height = 'auto';
-    }, speed);
-}
 
-function textSlideUp(elem) {
-    let fontSize = parseFloat(window.getComputedStyle(elem, null).getPropertyValue('font-size'))
-    elem.style.height = elem.scrollHeight / fontSize + 'em';
-
-    setTimeout(() => {
-        if (elem.classList.contains('croped-7')) {
-            elem.style.height = '10em';
-        } else {
-            elem.style.height = '4em';
-        }
-    }, 1);
-}
 
 let showTexts = document.querySelectorAll('.read-review')
 showTexts.forEach(function(showText) {
@@ -283,12 +264,10 @@ showTexts.forEach(function(showText) {
         let reviewtext = showText.querySelector('span');
 
         if (reviewCart.classList.contains('review-show')) {
-            textSlideUp(cropedText)
             reviewCart.classList.remove('review-show');
             reviewtext.textContent = 'Подробнее';
         } else {
             reviewCart.classList.add('review-show');
-            textSlideDown(cropedText, 250);
             reviewtext.textContent = 'Скрыть';
         }
     })
