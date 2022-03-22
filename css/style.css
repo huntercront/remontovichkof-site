@@ -1649,15 +1649,18 @@ body {
 }
 
 @media screen and (max-width:480px) {
-    .about-img {
-        max-height: 10.25rem;
+    .about {
+        padding: 3.75rem 0;
+    }
+    .col-2 .about-img.about-2 {
+        margin-top: 1.25rem;
     }
     .about-grid .title-h2 {
-        margin-bottom: 0;
+        margin-bottom: 1.75rem;
     }
     .about-grid {
         grid-template-columns: 1fr;
-        row-gap: 1.25rem;
+        row-gap: 0;
     }
     .about-grid .title-h2 {
         grid-column: 1/1;
@@ -1666,12 +1669,12 @@ body {
     .about-grid .col-2 {
         grid-column: 1/1;
         grid-row: 3/3;
-        row-gap: 1.25rem;
+        row-gap: 0rem;
     }
     .about-grid .col-3 {
         grid-row: 4/4;
         grid-template-columns: 1fr;
-        row-gap: 1.25rem;
+        row-gap: 0;
     }
     .about-3 {
         display: block;
@@ -1679,6 +1682,8 @@ body {
     }
     .col-3 .text-3 {
         order: 3;
+        grid-column: 1/1;
+        grid-row: 3/3;
     }
     .about-grid p.w-fix {
         margin: 0;
@@ -1691,7 +1696,25 @@ body {
         margin: 0;
     }
     .col-3 .about-img {
-        max-height: 10.25rem;
+        max-height: none;
+        height: 10.25rem;
+    }
+    .about-img.about-1,
+    .col-2 .about-img.about-2 {
+        max-height: none;
+        height: 10.25rem;
+    }
+    .about-img img {
+        object-position: bottom center;
+    }
+    .about-grid .col-3 .text-2 {
+        margin: 1.25rem 0;
+    }
+    .about-grid h5.w-fix {
+        margin: 1.25rem 0;
+    }
+    .about-grid .col-3 .text-3 {
+        margin-top: 1.25rem;
     }
 }
 

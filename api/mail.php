@@ -56,8 +56,8 @@ $mail->Port = 587; // порт для smtp
 
 
 
-$mail->setFrom("localhosr@os.com"); // Ваш Email
-$mail->addAddress("example@mail.ru"); // Email получателя
+$mail->setFrom("send@remontovichkof.ru"); // Ваш Email
+$mail->addAddress("911@remontovichkof.ru"); // Email получателя
 
  
 // Письмо
