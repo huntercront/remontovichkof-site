@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru-Ru">
 
  <head>
   <meta charset="UTF-8">
@@ -21,59 +21,77 @@
 
  <body class="loading">
 
+  <svg width="0" height="0" class="hidden" style="display:none;">
+		<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="r-arrow-icon">
+			<path fill-rule="evenodd" clip-rule="evenodd"
+				d="M10.9171 4.51706C11.0733 4.36085 11.3266 4.36085 11.4828 4.51706L14.6828 7.71706C14.839 7.87327 14.839 8.12654 14.6828 8.28275L11.4828 11.4827C11.3266 11.639 11.0733 11.639 10.9171 11.4827C10.7609 11.3265 10.7609 11.0733 10.9171 10.9171L13.4343 8.3999L1.59995 8.3999C1.37904 8.3999 1.19995 8.22082 1.19995 7.9999C1.19995 7.77899 1.37904 7.5999 1.59995 7.5999L13.4343 7.5999L10.9171 5.08275C10.7609 4.92654 10.7609 4.67327 10.9171 4.51706Z">
+			</path>
+		</symbol>
+		<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="user-icon">
+			<path fill-rule="evenodd" clip-rule="evenodd"
+				d="M7.99994 2.8C6.50264 2.8 5.28883 4.01381 5.28883 5.51111C5.28883 7.00842 6.50264 8.22222 7.99994 8.22222C9.49725 8.22222 10.7111 7.00842 10.7111 5.51111C10.7111 4.01381 9.49725 2.8 7.99994 2.8ZM4.48883 5.51111C4.48883 3.57198 6.06081 2 7.99994 2C9.93907 2 11.5111 3.57198 11.5111 5.51111C11.5111 7.45024 9.93907 9.02222 7.99994 9.02222C6.06081 9.02222 4.48883 7.45024 4.48883 5.51111ZM7.99993 10.8C6.49312 10.8 5.07065 11.1343 4.10149 11.4334C3.46207 11.6308 3.0093 12.2036 2.89867 12.9073L2.79622 13.6543C2.7662 13.8732 2.56444 14.0263 2.34558 13.9963C2.12671 13.9663 1.97362 13.7645 2.00364 13.5457L2.10758 12.7877C2.25743 11.8244 2.8924 10.9694 3.86552 10.669C4.8769 10.3568 6.38383 10 7.99993 10C9.61602 10 11.123 10.3568 12.1343 10.669C13.1075 10.9694 13.7424 11.8244 13.8922 12.7877L13.8933 12.7949L13.9962 13.5457C14.0262 13.7645 13.8731 13.9663 13.6543 13.9963C13.4354 14.0263 13.2337 13.8732 13.2036 13.6543L13.1012 12.9073C12.9906 12.2036 12.5378 11.6308 11.8984 11.4334C10.9292 11.1343 9.50673 10.8 7.99993 10.8Z">
+			</path>
+		</symbol>
 
+
+		<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="star-icon">
+			<path
+				d="m8.67.436 1.893 4.014c.11.231.32.391.563.428l4.234.644c.612.093.857.88.414 1.333L12.71 9.98a.804.804 0 0 0-.215.692l.723 4.412c.105.639-.536 1.126-1.083.825l-3.787-2.084a.718.718 0 0 0-.696 0L3.865 15.91c-.548.3-1.188-.186-1.083-.825l.723-4.412a.804.804 0 0 0-.215-.692L.226 6.855c-.443-.452-.198-1.24.414-1.333l4.234-.644a.75.75 0 0 0 .563-.428L7.33.436a.733.733 0 0 1 1.34 0Z" />
+		</symbol>
+	</svg>
 
   <div class="modal user-data" data-modal="request">
    <div class="modal-dialog">
-    <div class="container">
-     <div class="modal-header">
-      <h2 class="title-h2">Оформление заявки на расчёт</h2>
-      <button class="btn-icon close-modal"><i class="icon-s c-c">
+    <div class="modal-inner">
+     <div class="container">
+      <div class="modal-header">
+       <h2 class="title-h2">Оформление заявки на расчёт</h2>
+       <button class="btn-icon close-modal"><i class="icon-s c-c">
 							<img src="./img/x-icon.svg" alt="">
 						</i></button>
-     </div>
-     <div class="modal-content">
-      <div class="m-col-2">
-       <div class="modal-img">
-        <img src="./img/modal-img.svg" alt="Человек с копилкой">
-       </div>
-       <div class="modal-form">
-        <h4 class="title-h4">Бесплатно проконсультируем по ремонтным вопросам</h4>
-        <form action="user-date" method="post">
-         <div class="inputs-row inpits-2">
-          <div class="input text with-icon">
-           <div class="input-inner">
-            <label for="name">
+      </div>
+      <div class="modal-content">
+       <div class="m-col-2">
+        <div class="modal-img">
+         <img src="./img/modal-img.svg" alt="Человек с копилкой">
+        </div>
+        <div class="modal-form">
+         <h4 class="title-h4">Бесплатно проконсультируем по ремонтным вопросам</h4>
+         <form action="user-date" method="post">
+          <div class="inputs-row inpits-2">
+           <div class="input text with-icon">
+            <div class="input-inner">
+             <label for="name">
 												<span class="label">Введите имя</span>
 												<input type="text" name="name" id="name" required>
-												<span class="input-icon">
+												<span class="input-icon c-c">
 													<i class="icon-s c-c">
 														<img src="./img/input-user.svg" alt="">
 													</i>
 												</span>
 										</div>
 										</label>
-           </div>
+            </div>
 
-           <div class="input text with-icon">
-            <div class="input-inner">
-             <label for="tel">
+            <div class="input text with-icon">
+             <div class="input-inner">
+              <label for="tel">
 												<span class="label">Номер телефона</span>
 												<input type="tel" name="tel" id="tel" required>
-												<span class="input-icon">
+												<span class="input-icon c-c">
 													<i class="icon-s c-c">
 														<img src="./img/input-phone.svg" alt="">
 													</i>
 												</span>
 										</div>
 										</label>
+             </div>
             </div>
-           </div>
 
-           <div class="input checkbox">
-            <div class="input-inner">
-             <input type="checkbox" id="personal-data-modal" required>
-             <label for="personal-data-modal" class="descr">
+            <div class="input checkbox">
+             <div class="input-inner">
+              <input type="checkbox" id="personal-data-modal" required>
+              <label for="personal-data-modal" class="descr">
 											<svg width="20" height="20" viewBox="0 0 20 20" fill="none"
 												xmlns="http://www.w3.org/2000/svg">
 												<rect x="0.5" y="0.5" width="19" height="19" rx="3.5"
@@ -82,11 +100,12 @@
 													stroke-linecap="round" stroke-linejoin="round" />
 											</svg>
 											Нажимая на кнопку вы даете согласие на обработку персональных данных</label>
+             </div>
             </div>
-           </div>
-           <button class="btn main-btn">Оставить заявку</button>
-        </form>
-        </div>
+            <button class="btn main-btn">Оставить заявку</button>
+         </form>
+         </div>
+         </div>
         </div>
        </div>
       </div>
@@ -96,196 +115,323 @@
 
     <div class="modal sucses-modal" data-modal="sucses">
      <div class="modal-dialog">
-      <div class="container">
-       <div class="modal-header">
-        <h2 class="title-h2">Спасибо, ваши данные отправлены!</h2>
-        <button class="btn-icon close-modal"><i class="icon-s c-c">
+      <div class="modal-inner">
+       <div class="container">
+        <div class="modal-header">
+         <h2 class="title-h2">Спасибо, ваши данные отправлены!</h2>
+         <button class="btn-icon close-modal"><i class="icon-s c-c">
 							<img src="./img/x-icon.svg" alt="">
 						</i></button>
-       </div>
-
-       <div class="modal-slider">
-        <div class="ms-text">
-         <h4 class="title-h4">А пока вы можете посмотреть отзывы похожих объектов</h4>
         </div>
-        <div class="ms-slider">
-         <div class="ms-slides">
-          <div class="ms-inner h-fix">
 
-           <div class="review-card">
-            <div class="review-meta">
-             <span class="time text-s">15.07.2021</span>
-             <span class="city text-s">г. Москва</span>
-            </div>
-            <div class="review-text">
-             <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
-             <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...
-             </p>
+        <div class="modal-slider">
+         <div class="ms-text">
+          <h4 class="title-h4">А пока вы можете посмотреть отзывы похожих объектов</h4>
+         </div>
+         <div class="ms-slider">
+          <div class="ms-slides">
+           <div class="ms-inner h-fix">
 
-            </div>
-            <div class="review-galery">
-             <div class="review-photo">
-              <img src="./img/image_1.jpg" alt="">
+
+            <div class="review-card">
+             <div class="review-meta">
+              <span class="time text-s">15.07.2021</span>
+              <span class="city text-s">г. Москва</span>
              </div>
-             <div class="review-photo">
-              <img src="./img/image_1-1.jpg" alt="">
+             <div class="review-text">
+              <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
+              <p class="text-sm croped-text croped-3">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium saepe provident atque doloremque
+               maxime temporibus, animi repellat molestiae tempore?</p>
+              <button class="read-review c-s"><span>Подробнее</span><i
+												class="icon icon-sm right-pos c-c blac-icon">
+												<svg>
+													<use xlink:href="#r-arrow-icon"></use>
+												</svg>
+											</i></button>
              </div>
-             <div class="review-photo">
-              <img src="./img/image_1-2.jpg" alt="">
+
+             <div class="review-galery">
+              <a href="./img/image_1.jpg" data-fslightbox="review-1" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
+              <a href="./img/image_1-2.jpg" data-fslightbox="review-1" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
+              <a href="./img/image_1-2.jpg" data-fslightbox="review-1" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
              </div>
-            </div>
-            <div class="review-author">
-             <div class="user c-s">
-              <div class="user-photo c-c">
-               <img src="./img/user-icon.svg" alt="">
+
+
+             <div class="review-author">
+              <div class="user c-s">
+               <div class="user-photo c-c icon blac-icon">
+                <svg>
+													<use xlink:href="#user-icon"></use>
+												</svg>
+               </div>
+               <span class="user-name text-sm">Иван Сергеевич</span>
               </div>
-              <span class="user-name text-sm">Иван Сергеевич</span>
-             </div>
-             <div class="rating"></div>
-            </div>
-           </div>
-
-
-           <div class="review-card">
-            <div class="review-meta">
-             <span class="time text-s">15.07.2021</span>
-             <span class="city text-s">г. Москва</span>
-            </div>
-            <div class="review-text">
-             <h4 class="review-title title-h5">Ремонт под ключ на пр. Авиаконструкторов</h4>
-             <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...
-             </p>
-
-            </div>
-
-            <div class="review-galery">
-             <div class="review-photo">
-              <img src="./img/image_1.jpg" alt="">
-             </div>
-             <div class="review-photo">
-              <img src="./img/image_1-1.jpg" alt="">
-             </div>
-             <div class="review-photo">
-              <img src="./img/image_1-2.jpg" alt="">
-             </div>
-            </div>
-
-            <div class="review-author">
-             <div class="user c-s">
-              <div class="user-photo c-c">
-               <img src="./img/user-icon.svg" alt="">
+              <div class="rating c-s rating-5">
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
               </div>
-              <span class="user-name text-sm">Иван Сергеевич</span>
              </div>
-             <div class="rating"></div>
-            </div>
-           </div>
-
-
-           <div class="review-card">
-            <div class="review-meta">
-             <span class="time text-s">15.07.2021</span>
-             <span class="city text-s">г. Москва</span>
-            </div>
-            <div class="review-text">
-             <h4 class="review-title title-h5">Ремонт кухни на Дзержинского</h4>
-             <p class="text-sm">Кухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели приехали и установиКухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели
-              приехали и установи...Кухня - просто нечто! Сергей и Анатолий - профессионалы своего дела.
-             </p>
             </div>
 
-            <div class="review-author">
-             <div class="user c-s">
-              <div class="user-photo c-c">
-               <img src="./img/user-icon.svg" alt="">
+
+            <div class="review-card">
+             <div class="review-meta">
+              <span class="time text-s">15.07.2021</span>
+              <span class="city text-s">г. Москва</span>
+             </div>
+             <div class="review-text">
+              <h4 class="review-title title-h5">Ремонт под ключ на пр. Авиаконструкторов</h4>
+              <p class="text-sm croped-text croped-3">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 недеLorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium saepe provident atque doloremque
+               maxime temporibus, animi repellat molestiae tempore?</p>
+              <button class="read-review c-s"><span>Подробнее</span><i
+												class="icon icon-sm right-pos c-c blac-icon">
+												<svg>
+													<use xlink:href="#r-arrow-icon"></use>
+												</svg>
+											</i></button>
+             </div>
+
+             <div class="review-galery">
+              <a href="./img/image_1.jpg" data-fslightbox="review-2" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
+              <a href="./img/image_1-2.jpg" data-fslightbox="review-2" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
+              <a href="./img/image_1-2.jpg" data-fslightbox="review-2" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
+             </div>
+
+             <div class="review-author">
+              <div class="user c-s">
+               <div class="user-photo c-c icon blac-icon">
+                <svg>
+													<use xlink:href="#user-icon"></use>
+												</svg>
+               </div>
+               <span class="user-name text-sm">Иван Сергеевич</span>
               </div>
-              <span class="user-name text-sm">Иван Сергеевич</span>
-             </div>
-             <div class="rating"></div>
-            </div>
-           </div>
-
-
-
-           <div class="review-card">
-            <div class="review-meta">
-             <span class="time text-s">15.07.2021</span>
-             <span class="city text-s">г. Москва</span>
-            </div>
-            <div class="review-text">
-             <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
-             <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...
-             </p>
-            </div>
-            <div class="review-galery">
-             <div class="review-photo">
-              <img src="./img/image_1.jpg" alt="">
-             </div>
-             <div class="review-photo">
-              <img src="./img/image_1-1.jpg" alt="">
-             </div>
-             <div class="review-photo">
-              <img src="./img/image_1-2.jpg" alt="">
-             </div>
-            </div>
-            <div class="review-author">
-             <div class="user c-s">
-              <div class="user-photo c-c">
-               <img src="./img/user-icon.svg" alt="">
+              <div class="rating c-s rating-5">
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
               </div>
-              <span class="user-name text-sm">Иван Сергеевич</span>
              </div>
-             <div class="rating"></div>
             </div>
-           </div>
 
 
+            <div class="review-card">
+             <div class="review-meta">
+              <span class="time text-s">15.07.2021</span>
+              <span class="city text-s">г. Москва</span>
+             </div>
+             <div class="review-text">
+              <h4 class="review-title title-h5">Ремонт кухни на Дзержинского</h4>
+              <p class="text-sm croped-text croped-7">Кухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели приехали и установиКухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели
+               приехали и установи Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium saepe provident atque doloremque maxime temporibus, animi repellat molestiae tempore?
+              </p>
+              <button class="read-review c-s"><span>Подробнее</span><i
+												class="icon icon-sm right-pos c-c blac-icon">
+												<svg>
+													<use xlink:href="#r-arrow-icon"></use>
+												</svg>
+											</i></button>
+             </div>
 
-           <div class="review-card">
-            <div class="review-meta">
-             <span class="time text-s">15.07.2021</span>
-             <span class="city text-s">г. Москва</span>
-            </div>
-            <div class="review-text">
-             <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
-             <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...
-             </p>
-            </div>
-            <div class="review-galery">
-             <div class="review-photo">
-              <img src="./img/image_1.jpg" alt="">
-             </div>
-             <div class="review-photo">
-              <img src="./img/image_1-1.jpg" alt="">
-             </div>
-             <div class="review-photo">
-              <img src="./img/image_1-2.jpg" alt="">
-             </div>
-            </div>
-            <div class="review-author">
-             <div class="user c-s">
-              <div class="user-photo c-c">
-               <img src="./img/user-icon.svg" alt="">
+             <div class="review-author">
+              <div class="user c-s">
+               <div class="user-photo c-c icon blac-icon">
+                <svg>
+													<use xlink:href="#user-icon"></use>
+												</svg>
+               </div>
+               <span class="user-name text-sm">Иван Сергеевич</span>
               </div>
-              <span class="user-name text-sm">Иван Сергеевич</span>
+              <div class="rating c-s rating-5">
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+              </div>
              </div>
-             <div class="rating"></div>
             </div>
+
+
+
+            <div class="review-card">
+             <div class="review-meta">
+              <span class="time text-s">15.07.2021</span>
+              <span class="city text-s">г. Москва</span>
+             </div>
+             <div class="review-text">
+              <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
+              <p class="text-sm croped-text croped-3">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 недеLorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium saepe provident atque doloremque
+               maxime temporibus, animi repellat molestiae tempore?</p>
+              <button class="read-review c-s"><span>Подробнее</span><i
+												class="icon icon-sm right-pos c-c blac-icon">
+												<svg>
+													<use xlink:href="#r-arrow-icon"></use>
+												</svg>
+											</i></button>
+             </div>
+             <div class="review-galery">
+              <a href="./img/image_1.jpg" data-fslightbox="review-4" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
+              <a href="./img/image_1-2.jpg" data-fslightbox="review-4" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
+              <a href="./img/image_1-2.jpg" data-fslightbox="review-4" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
+             </div>
+             <div class="review-author">
+              <div class="user c-s">
+               <div class="user-photo c-c icon blac-icon">
+                <svg>
+													<use xlink:href="#user-icon"></use>
+												</svg>
+               </div>
+               <span class="user-name text-sm">Иван Сергеевич</span>
+              </div>
+              <div class="rating c-s rating-5">
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+              </div>
+             </div>
+            </div>
+
+
+
+            <div class="review-card">
+             <div class="review-meta">
+              <span class="time text-s">15.07.2021</span>
+              <span class="city text-s">г. Москва</span>
+             </div>
+             <div class="review-text">
+              <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
+              <p class="text-sm croped-text croped-3">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 недеLorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium saepe provident atque doloremque
+               maxime temporibus, animi repellat molestiae tempore?</p>
+              <button class="read-review c-s"><span>Подробнее</span><i
+												class="icon icon-sm right-pos c-c blac-icon">
+												<svg>
+													<use xlink:href="#r-arrow-icon"></use>
+												</svg>
+											</i></button>
+             </div>
+
+             <div class="review-galery">
+
+              <a href="./img/image_1.jpg" data-fslightbox="review-5" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
+              <a href="./img/image_1-2.jpg" data-fslightbox="review-5" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
+              <a href="./img/image_1-2.jpg" data-fslightbox="review-5" data-type="image" rel="nofollow" class="review-photo c-c">
+               <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+              </a>
+             </div>
+             <div class="review-author">
+              <div class="user c-s">
+               <div class="user-photo c-c icon blac-icon">
+                <svg>
+													<use xlink:href="#user-icon"></use>
+												</svg>
+               </div>
+               <span class="user-name text-sm">Иван Сергеевич</span>
+              </div>
+              <div class="rating c-s rating-5">
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+               <svg class="icon-xs">
+												<use xlink:href="#star-icon"></use>
+											</svg>
+              </div>
+             </div>
+            </div>
+
+
            </div>
           </div>
          </div>
         </div>
-       </div>
-       <div class="slider-controls e-e">
-        <div class="buttons c-s">
-         <button class="slide-button prew c-c"><i class="icon icon-sm c-c"><svg width="20" height="20"
+        <div class="slider-controls e-e">
+         <div class="buttons c-s">
+          <button class="slide-button prew c-c"><i class="icon icon-sm c-c"><svg width="20" height="20"
 									viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M18 10H2" stroke="white" stroke-linecap="round"></path>
 									<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round"
 										stroke-linejoin="round"></path>
 								</svg>
 							</i></button>
-         <button class="slide-button next c-c">
+          <button class="slide-button next c-c">
 							<i class="icon icon-sm c-c"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<path d="M18 10H2" stroke="white" stroke-linecap="round"></path>
@@ -294,61 +440,63 @@
 								</svg>
 							</i>
 						</button>
+         </div>
         </div>
-       </div>
 
+       </div>
       </div>
      </div>
     </div>
-
 
     <div class="modal calc-modal" data-modal="calculate">
      <div class="modal-dialog">
-      <div class="container">
-       <div class="modal-header">
-        <h2 class="title-h2">Предварительный расчёт:</h2>
-        <button class="btn-icon close-modal"><i class="icon-s c-c">
+      <div class="modal-inner">
+       <div class="container">
+        <div class="modal-header">
+         <h2 class="title-h2">Предварительный расчёт:</h2>
+         <button class="btn-icon close-modal"><i class="icon-s c-c">
 							<img src="./img/x-icon.svg" alt="">
 						</i></button>
-       </div>
-       <div class="modal-content">
-        <div class="m-col-2 price-details">
-         <div class="modal-img">
-          <img src="./img/modal-img.svg" alt="Человек с копилкой">
-         </div>
+        </div>
+        <div class="modal-content">
+         <div class="m-col-2 price-details">
+          <div class="modal-img">
+           <img src="./img/modal-img.svg" alt="Человек с копилкой">
+          </div>
 
-         <div class="calc-date">
-          <div class="price-info descr">
-           «Косметический» ремонт квартиры, площадью <strong><span class="size">112</span>
-									м2</strong> займет <strong><span class="days">45</span> дней</strong> и его примерная стоимость ремонтных работ составит от <strong><span class="start-price">361
+          <div class="calc-date">
+           <div class="price-info descr">
+            «Косметический» ремонт квартиры, площадью <strong><span class="size">112</span>
+									м<sup>2</sup></strong> займет <strong><span class="days">45</span> дней</strong> и его примерная стоимость ремонтных работ составит от <strong><span
+										class="start-price">361
 										368</span></strong> до <strong><span class="end-price">534 101</span>
 									рублей.</strong>
-          </div>
-          <div class="discount-info c-s">
-           <div class="discount-icon c-c">
-            <img src="./img/money-icon.svg" alt="">
            </div>
-           <div class="discount-text">
-            <div class="text-sm">Скидка не учтена и составит:</div>
-            <div class="title-h4">
-             <span class="discount-number brand">36 137</span> рублей.
+           <div class="discount-info c-s">
+            <div class="discount-icon c-c">
+             <img src="./img/money-icon.svg" alt="">
+            </div>
+            <div class="discount-text">
+             <div class="text-sm">Скидка не учтена и составит:</div>
+             <div class="title-h4">
+              <span class="discount-number brand">36 137</span> рублей.
+             </div>
             </div>
            </div>
-          </div>
 
-          <div class="about-calc">
-           <h4 class="title-h4">Это не финальная цена!</h4>
-           <p class="descr">Калькулятор рассчитал примерную стоимость ремонта квартиры. Точная стоимость скорее всего будет меньше.</p>
-           <button class="btn main-btn">Оставить заявку</button>
-          </div>
+           <div class="about-calc">
+            <h4 class="title-h4">Это не финальная цена!</h4>
+            <p class="descr">Калькулятор рассчитал примерную стоимость ремонта квартиры. Точная стоимость скорее всего будет меньше.</p>
+            <button class="btn main-btn">Оставить заявку</button>
+           </div>
 
+          </div>
          </div>
         </div>
        </div>
       </div>
      </div>
     </div>
-
 
 
     <header class="header">
@@ -416,7 +564,7 @@
 
     <main class="main">
      <section class="hero">
-      <div class="hero-slider h-fix">
+      <div class="hero-slider h-fix" data-slide="20">
        <div class="hero-slide" style="background-image: url('./img/hero-slide-1.jpg');">
         <div class="container">
          <h1 class="title-h1">
@@ -427,7 +575,7 @@
        <div class="hero-slide" style="background-image: url('./img/hero-slide-2.jpg');">
         <div class="container">
          <h1 class="title-h1">
-          Ремонт вашей кухни от 2500 руб/м2
+          Ремонт вашей кухни от&nbsp;2500&nbsp;руб/м2
          </h1>
         </div>
        </div>
@@ -528,7 +676,7 @@
              </div>
 
 
-             <div class="input drop input-dark" curent-k="1">
+             <div class="input drop drop-checkbox input-dark" curent-k="1">
               <div class="input-inner">
                <label for="services">
 										<span class="label">Выберите доп.услуги</span>
@@ -537,9 +685,51 @@
 								</div>
 								</label>
                <div class="drop-zone">
-                <div class="drop-value" data-k="1.1">Замена электрики</div>
-                <div class="drop-value" data-k="1.1">Замена систем отопления и водоснабжения</div>
-                <div class="drop-value" data-k="1.1">Закупка и доставка стройматериалов</div>
+
+                <div class="input checkbox">
+                 <div class="input-inner">
+                  <input type="checkbox" id="services-1" data-k="1.1">
+                  <label for="services-1" class="descr drop-checkbox">
+												<svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<rect x="0.5" y="0.5" width="19" height="19" rx="3.5"
+														stroke="#1CB13D"></rect>
+													<path class="check-mark" d="M5 10.5L8.5 14L15.5 7" stroke="#242D39"
+														stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg><span>Замена электрики</span></label>
+                 </div>
+                </div>
+
+                <div class="input checkbox">
+                 <div class="input-inner">
+                  <input type="checkbox" id="services-2" data-k="1.1">
+                  <label for="services-2" class="descr drop-checkbox">
+												<svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<rect x="0.5" y="0.5" width="19" height="19" rx="3.5"
+														stroke="#1CB13D"></rect>
+													<path class="check-mark" d="M5 10.5L8.5 14L15.5 7" stroke="#242D39"
+														stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg><span>Замена электрики</span></label>
+                 </div>
+                </div>
+
+                <div class="input checkbox">
+                 <div class="input-inner">
+                  <input type="checkbox" id="services-3" data-k="1.1">
+                  <label for="services-3" class="descr drop-checkbox">
+												<svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<rect x="0.5" y="0.5" width="19" height="19" rx="3.5"
+														stroke="#1CB13D"></rect>
+													<path class="check-mark" d="M5 10.5L8.5 14L15.5 7" stroke="#242D39"
+														stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg><span>Замена систем отопления и водоснабжения</span></label>
+                 </div>
+                </div>
+
+
+
                </div>
               </div>
 
@@ -582,7 +772,7 @@
 
                 </div>
                </div>
-               <button class="btn main-btn">Оставить заявку</button>
+               <button class="btn main-btn">Рассчитать стоимость</button>
               </div>
 
 
@@ -599,7 +789,8 @@
      <section class="about" id="about">
       <div class="container">
        <div class="about-grid">
-        <h2 class="title-h2">Ремонтовичко<span class="brand">Ф - <span class="no-wrap">кто мы?</span></span>
+        <h2 class="title-h2">Ремонтовичко<span class="brand">Ф <span class="no-wrap">- кто мы?</span>
+         </span>
         </h2>
         <div class="col-1">
          <div class="about-img about-1"><img src="./img/about_1.jpg" alt=""></div>
@@ -781,20 +972,23 @@
         <div class="tab-content" tab-content="3">
          <div class="tab-galery">
           <div class="buttons c-s">
-           <button class="slide-button prew c-c"><i class="icon icon-sm c-c"><svg width="20" height="20"
-														viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path d="M18 10H2" stroke="white" stroke-linecap="round" />
-														<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-													</svg>
-												</i></button>
+           <button class="slide-button prew c-c"><i class="icon icon-sm c-c"><svg width="20"
+											height="20" viewBox="0 0 20 20" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path d="M18 10H2" stroke="white" stroke-linecap="round" />
+											<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</i></button>
            <button class="slide-button next c-c">
-												<i class="icon icon-sm c-c"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-														xmlns="http://www.w3.org/2000/svg">
-														<path d="M18 10H2" stroke="white" stroke-linecap="round" />
-														<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-													</svg>
-												</i>
-											</button>
+									<i class="icon icon-sm c-c"><svg width="20" height="20" viewBox="0 0 20 20"
+											fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M18 10H2" stroke="white" stroke-linecap="round" />
+											<path d="M6 6L2 10L6 14" stroke="white" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</i>
+								</button>
           </div>
           <div class="galery-inner">
 
@@ -835,7 +1029,7 @@
              <label for="name-land">
 											<span class="label">Введите имя</span>
 											<input type="text" name="name" id="name-land" required>
-											<span class="input-icon">
+											<span class="input-icon c-c">
 												<i class="icon-s c-c">
 													<img src="./img/input-user.svg" alt="">
 												</i>
@@ -849,7 +1043,7 @@
               <label for="tel-land">
 											<span class="label">Номер телефона</span>
 											<input type="tel" name="tel-land" id="tel-land" required>
-											<span class="input-icon">
+											<span class="input-icon c-c">
 												<i class="icon-s c-c">
 													<img src="./img/input-phone.svg" alt="">
 												</i>
@@ -927,28 +1121,55 @@
           </div>
           <div class="review-text">
            <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
-           <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
+           <p class="text-sm croped-text croped-3">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium saepe provident atque doloremque
+            maxime temporibus, animi repellat molestiae tempore?</p>
+           <button class="read-review c-s"><span>Подробнее</span><i
+										class="icon icon-sm right-pos c-c blac-icon">
+										<svg>
+											<use xlink:href="#r-arrow-icon"></use>
+										</svg>
+									</i></button>
+          </div>
 
-          </div>
           <div class="review-galery">
-           <div class="review-photo">
-            <img src="./img/image_1.jpg" alt="">
-           </div>
-           <div class="review-photo">
-            <img src="./img/image_1-1.jpg" alt="">
-           </div>
-           <div class="review-photo">
-            <img src="./img/image_1-2.jpg" alt="">
-           </div>
+           <a href="./img/image_1.jpg" data-fslightbox="review-1" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
+           <a href="./img/image_1-2.jpg" data-fslightbox="review-1" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
+           <a href="./img/image_1-2.jpg" data-fslightbox="review-1" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
           </div>
+
+
           <div class="review-author">
            <div class="user c-s">
-            <div class="user-photo c-c">
-             <img src="./img/user-icon.svg" alt="">
+            <div class="user-photo c-c icon blac-icon">
+             <svg>
+											<use xlink:href="#user-icon"></use>
+										</svg>
             </div>
             <span class="user-name text-sm">Иван Сергеевич</span>
            </div>
-           <div class="rating"></div>
+           <div class="rating c-s rating-5">
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+           </div>
           </div>
          </div>
 
@@ -960,30 +1181,54 @@
           </div>
           <div class="review-text">
            <h4 class="review-title title-h5">Ремонт под ключ на пр. Авиаконструкторов</h4>
-           <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
-
+           <p class="text-sm croped-text croped-3">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 недеLorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium saepe provident atque doloremque
+            maxime temporibus, animi repellat molestiae tempore?</p>
+           <button class="read-review c-s"><span>Подробнее</span><i
+										class="icon icon-sm right-pos c-c blac-icon">
+										<svg>
+											<use xlink:href="#r-arrow-icon"></use>
+										</svg>
+									</i></button>
           </div>
 
           <div class="review-galery">
-           <div class="review-photo">
-            <img src="./img/image_1.jpg" alt="">
-           </div>
-           <div class="review-photo">
-            <img src="./img/image_1-1.jpg" alt="">
-           </div>
-           <div class="review-photo">
-            <img src="./img/image_1-2.jpg" alt="">
-           </div>
+           <a href="./img/image_1.jpg" data-fslightbox="review-2" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
+           <a href="./img/image_1-2.jpg" data-fslightbox="review-2" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
+           <a href="./img/image_1-2.jpg" data-fslightbox="review-2" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
           </div>
 
           <div class="review-author">
            <div class="user c-s">
-            <div class="user-photo c-c">
-             <img src="./img/user-icon.svg" alt="">
+            <div class="user-photo c-c icon blac-icon">
+             <svg>
+											<use xlink:href="#user-icon"></use>
+										</svg>
             </div>
             <span class="user-name text-sm">Иван Сергеевич</span>
            </div>
-           <div class="rating"></div>
+           <div class="rating c-s rating-5">
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+           </div>
           </div>
          </div>
 
@@ -995,19 +1240,43 @@
           </div>
           <div class="review-text">
            <h4 class="review-title title-h5">Ремонт кухни на Дзержинского</h4>
-           <p class="text-sm">Кухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели приехали и установиКухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели
-            приехали и установи...Кухня - просто нечто! Сергей и Анатолий - профессионалы своего дела.
+           <p class="text-sm croped-text croped-7">Кухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели приехали и установиКухня - просто нечто! Сергей и Анатолий - профессионалы своего дела. Сделали проект кухни и уже через 2 недели
+            приехали и установи Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium saepe provident atque doloremque maxime temporibus, animi repellat molestiae tempore?
            </p>
+           <button class="read-review c-s"><span>Подробнее</span><i
+										class="icon icon-sm right-pos c-c blac-icon">
+										<svg>
+											<use xlink:href="#r-arrow-icon"></use>
+										</svg>
+									</i></button>
           </div>
 
           <div class="review-author">
            <div class="user c-s">
-            <div class="user-photo c-c">
-             <img src="./img/user-icon.svg" alt="">
+            <div class="user-photo c-c icon blac-icon">
+             <svg>
+											<use xlink:href="#user-icon"></use>
+										</svg>
             </div>
             <span class="user-name text-sm">Иван Сергеевич</span>
            </div>
-           <div class="rating"></div>
+           <div class="rating c-s rating-5">
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+           </div>
           </div>
          </div>
 
@@ -1020,27 +1289,52 @@
           </div>
           <div class="review-text">
            <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
-           <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
+           <p class="text-sm croped-text croped-3">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 недеLorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium saepe provident atque doloremque
+            maxime temporibus, animi repellat molestiae tempore?</p>
+           <button class="read-review c-s"><span>Подробнее</span><i
+										class="icon icon-sm right-pos c-c blac-icon">
+										<svg>
+											<use xlink:href="#r-arrow-icon"></use>
+										</svg>
+									</i></button>
           </div>
           <div class="review-galery">
-           <div class="review-photo">
-            <img src="./img/image_1.jpg" alt="">
-           </div>
-           <div class="review-photo">
-            <img src="./img/image_1-1.jpg" alt="">
-           </div>
-           <div class="review-photo">
-            <img src="./img/image_1-2.jpg" alt="">
-           </div>
+           <a href="./img/image_1.jpg" data-fslightbox="review-4" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
+           <a href="./img/image_1-2.jpg" data-fslightbox="review-4" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
+           <a href="./img/image_1-2.jpg" data-fslightbox="review-4" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
           </div>
           <div class="review-author">
            <div class="user c-s">
-            <div class="user-photo c-c">
-             <img src="./img/user-icon.svg" alt="">
+            <div class="user-photo c-c icon blac-icon">
+             <svg>
+											<use xlink:href="#user-icon"></use>
+										</svg>
             </div>
             <span class="user-name text-sm">Иван Сергеевич</span>
            </div>
-           <div class="rating"></div>
+           <div class="rating c-s rating-5">
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+           </div>
           </div>
          </div>
 
@@ -1053,27 +1347,54 @@
           </div>
           <div class="review-text">
            <h4 class="review-title title-h5">Ремонт спальни на ул. Ленина</h4>
-           <p class="text-sm">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 неде...</p>
+           <p class="text-sm croped-text croped-3">Спальню сделали быстрее, чем мы ожидали! Началось все с того, что прораб Роман приехал на объект и посчитал смету: договорились на 2 недеLorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium saepe provident atque doloremque
+            maxime temporibus, animi repellat molestiae tempore?</p>
+           <button class="read-review c-s"><span>Подробнее</span><i
+										class="icon icon-sm right-pos c-c blac-icon">
+										<svg>
+											<use xlink:href="#r-arrow-icon"></use>
+										</svg>
+									</i></button>
           </div>
+
           <div class="review-galery">
-           <div class="review-photo">
-            <img src="./img/image_1.jpg" alt="">
-           </div>
-           <div class="review-photo">
-            <img src="./img/image_1-1.jpg" alt="">
-           </div>
-           <div class="review-photo">
-            <img src="./img/image_1-2.jpg" alt="">
-           </div>
+
+           <a href="./img/image_1.jpg" data-fslightbox="review-5" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
+           <a href="./img/image_1-2.jpg" data-fslightbox="review-5" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
+           <a href="./img/image_1-2.jpg" data-fslightbox="review-5" data-type="image" rel="nofollow" class="review-photo c-c">
+            <img src="./img/image_1-2.jpg" width="122" height="80" alt="Фото ремонта">
+           </a>
           </div>
           <div class="review-author">
            <div class="user c-s">
-            <div class="user-photo c-c">
-             <img src="./img/user-icon.svg" alt="">
+            <div class="user-photo c-c icon blac-icon">
+             <svg>
+											<use xlink:href="#user-icon"></use>
+										</svg>
             </div>
             <span class="user-name text-sm">Иван Сергеевич</span>
            </div>
-           <div class="rating"></div>
+           <div class="rating c-s rating-5">
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+            <svg class="icon-xs">
+										<use xlink:href="#star-icon"></use>
+									</svg>
+           </div>
           </div>
          </div>
 

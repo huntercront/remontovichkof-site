@@ -201,12 +201,13 @@ l.require([
             draggable: true,
             multipleDrag: true,
             threshold: 20,
-            loop: false,
+            loop: true,
             rtl: false,
             perPage: {
                 300: 1,
             }
         });
+        setInterval(() => heroSlider.next(), document.querySelector('.hero-slider').getAttribute('data-slide') * 1000)
     }
 );
 
@@ -217,13 +218,17 @@ var l = new Loader();
 l.require([
         './js/scroll.js'
     ],
-    function() {
-
-
-    }
+    function() {}
 );
 
+// setTimeout(() => {
+var l = new Loader();
+l.require([
+        "./js/galery.js"
+    ],
+    function() {});
 
+// }, 2000);
 
 let last_known_scroll_position = 0;
 let ticking = false;
@@ -249,6 +254,45 @@ window.addEventListener('scroll', function(e) {
     }
 });
 
+function textSlideDown(elem, speed) {
+    let fontSize = parseFloat(window.getComputedStyle(elem, null).getPropertyValue('font-size'))
+    elem.style.height = elem.scrollHeight / fontSize + 'em';
+    setTimeout(() => {
+        elem.style.height = 'auto';
+    }, speed);
+}
+
+function textSlideUp(elem) {
+    let fontSize = parseFloat(window.getComputedStyle(elem, null).getPropertyValue('font-size'))
+    elem.style.height = elem.scrollHeight / fontSize + 'em';
+
+    setTimeout(() => {
+        if (elem.classList.contains('croped-7')) {
+            elem.style.height = '10em';
+        } else {
+            elem.style.height = '4em';
+        }
+    }, 1);
+}
+
+let showTexts = document.querySelectorAll('.read-review')
+showTexts.forEach(function(showText) {
+    showText.addEventListener('click', function(e) {
+        let reviewCart = showText.closest('.review-card');
+        let cropedText = reviewCart.querySelector('.croped-text');
+        let reviewtext = showText.querySelector('span');
+
+        if (reviewCart.classList.contains('review-show')) {
+            textSlideUp(cropedText)
+            reviewCart.classList.remove('review-show');
+            reviewtext.textContent = 'Подробнее';
+        } else {
+            reviewCart.classList.add('review-show');
+            textSlideDown(cropedText, 250);
+            reviewtext.textContent = 'Скрыть';
+        }
+    })
+})
 
 
 
@@ -258,26 +302,35 @@ let options_map = {
     passive: true,
     capture: true
 };
-map_container.addEventListener('click', start_lazy_map, options_map);
 
 let map_loaded = false;
 let holderClose = false;
 
+if (!map_loaded) {
+    map_container.addEventListener('click', start_lazy_map, options_map);
+    map_container.addEventListener('mouseenter', start_lazy_map, options_map);
+}
+
 function start_lazy_map() {
     if (!map_loaded) {
-
+        map_loaded = true;
         var l = new Loader();
         l.require([
                 "https://api-maps.yandex.ru/2.1/?apikey=93fece7a-9fe4-47c6-80de-eaea41ec7d4a&lang=ru_RU"
             ],
             function() {
                 ymaps.ready(function() {
-                    map_loaded = true;
                     var myMap = new ymaps.Map('map', {
                             center: [59.91313956420063, 30.369578499999943],
                             zoom: 16,
-                            controls: ['zoomControl'],
+                            controls: ['zoomControl', 'fullscreenControl'],
                             behaviors: ['drag']
+                        }, {
+                            suppressMapOpenBlock: true,
+                            restrictMapArea: [
+                                [59.838, 29.511],
+                                [60.056, 30.829]
+                            ]
                         }),
                         MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
                             '<div style="background-color: #414141; font-weight: bold;">$[properties.iconContent]</div>'
@@ -286,12 +339,8 @@ function start_lazy_map() {
                         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
                             hintContent: '<div class="hint-map">наб. Обводного канала, д.24 Д, БЦ «Амилен» 1 этаж, офис 28-29</div>',
                         }, {
-
-
                             iconLayout: 'default#image',
-
                             iconImageHref: '../img/map-pin.svg',
-
                             iconImageSize: [60, 60],
                             iconImageOffset: [-15, -15]
                         });
@@ -313,7 +362,7 @@ textInputs.forEach(function(textInput) {
 
     let inputWrapper = textInput.closest('.input.text');
 
-    textInput.addEventListener('focus', function(e) {
+    textInput.addEventListener('click', function(e) {
         inputWrapper.classList.add('focused');
     })
 
@@ -329,7 +378,7 @@ textInputs.forEach(function(textInput) {
     })
 })
 
-let dropInputs = document.querySelectorAll('.drop input');
+let dropInputs = document.querySelectorAll('.input.drop input[type=text]');
 dropInputs.forEach(function(dropInput) {
     dropInput.addEventListener('click', function(e) {
         if (document.querySelector('.input.drop.drop-active')) {
@@ -360,7 +409,7 @@ dropValues.forEach(function(dropValue) {
 document.body.addEventListener('click', function(e) {
     let target = e.target;
     if (document.querySelector('.input.drop.drop-active')) {
-        if (!target.closest('.input.drop') && !target.classList.contains('.drop-value')) {
+        if (!target.closest('.input.drop') && !target.classList.contains('.drop-value') && !target.classList.contains('.drop-checkbox')) {
             document.querySelector('.input.drop.drop-active').classList.remove('drop-active', 'focused');
         }
     }
@@ -426,7 +475,7 @@ dateForm.addEventListener('submit', function(e) {
         placesize: parseInt(placeSize.value),
         expectedprice: parseInt(curentPay)
     };
-    var url = "../api/mail.php?data=" + encodeURIComponent(JSON.stringify(params));;
+    var url = "../api/mail.php?data=" + encodeURIComponent(JSON.stringify(params));
     xhttp = new XMLHttpRequest();
     xhttp.open("get", url, true);
     xhttp.setRequestHeader('Content-Type', 'application/json');
@@ -454,7 +503,7 @@ inlineForm.addEventListener('submit', function(e) {
         name: userName.value,
         phone: userPhone.value
     };
-    var url = "../api/mail.php?data=" + encodeURIComponent(JSON.stringify(params));;
+    var url = "../api/mail.php?data=" + encodeURIComponent(JSON.stringify(params));
     xhttp = new XMLHttpRequest();
     xhttp.open("get", url, true);
     xhttp.setRequestHeader('Content-Type', 'application/json');
@@ -473,7 +522,6 @@ inlineForm.addEventListener('submit', function(e) {
 
 
 calculate.addEventListener('click', function(e) {
-
     if (place.value == '' || placeSize.value == '') {
         toast.classList.add('error');
         setTimeout(() => {
@@ -495,24 +543,21 @@ closeModals.forEach(function(closeModal) {
 
 
 placeSize.addEventListener('input', function(e) {
-
     updatePrice()
-
 })
 
 function updatePrice() {
     let selectedType = place.closest('.input');
     let curentPlaceSumm = selectedType.getAttribute('curent-price');
     if (curentPlaceSumm != 0 && placeSize.value != '') {
-        console.log(rounded(curentPlaceSumm * placeSize.value * curentK));
         curentPay = rounded(curentPlaceSumm * placeSize.value * curentK)
         let actualDiscount = rounded(curentPlaceSumm * placeSize.value * curentK / 100 * 25)
         discountText.textContent = actualDiscount + 'руб.';
         discount.style.width = curentK * 25 + '%';
-
         document.querySelector('.start-price').textContent = curentPay - actualDiscount;
         document.querySelector('.end-price').textContent = curentPay + actualDiscount;
-        document.querySelector('.discount-number').textContent = actualDiscount
+        document.querySelector('.discount-number').textContent = actualDiscount;
+        document.querySelector('.price-info  .size').textContent = placeSize.value;
     }
 
 }
@@ -522,11 +567,8 @@ function rounded(number) {
 }
 
 function recalc(input, value, isPrice) {
-    console.log(input, value, isPrice)
     let inputWrapper = input.closest('.input');
-
     if (!isPrice) {
-
         curentK = rounded(curentK / inputWrapper.getAttribute('curent-k') * value);
         inputWrapper.setAttribute('curent-k', value)
         console.log(curentK);
@@ -535,5 +577,43 @@ function recalc(input, value, isPrice) {
     }
     updatePrice()
 }
+let checkInputs = document.querySelectorAll('.drop-zone input[type=checkbox]');
+checkInputs.forEach(function(checkInput) {
+    checkInput.addEventListener('input', function(e) {
+
+        let mainInputWrapper = checkInput.closest('.drop');
+        let mainInput = mainInputWrapper.querySelector('input[type=text]');
+        var totalChecked = 0;
+        var value = '';
+
+
+        for (var checkbox of checkInputs) {
+            if (checkbox.checked) {
+                totalChecked++;
+                if (value == '') {
+                    value = value + checkbox.closest('.input-inner').querySelector('span').textContent;
+                } else {
+                    value = value + ', ' + checkbox.closest('.input-inner').querySelector('span').textContent;
+                }
+
+            }
+        }
+
+
+        if (totalChecked > 0) {
+            mainInput.value = value
+            mainInputWrapper.classList.add('value-entered')
+        } else {
+            mainInput.value = ''
+            mainInputWrapper.classList.remove('value-entered')
+        }
+        if (checkInput.checked) {
+            curentK = rounded(curentK * checkInput.getAttribute('data-k'))
+        } else {
+            curentK = rounded(curentK / checkInput.getAttribute('data-k'))
+        }
+        updatePrice()
+    })
+})
 
 // от 120 дней до 240 дней
