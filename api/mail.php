@@ -14,18 +14,18 @@ require './Exception.php';
 // Переменные
 header("Content-Type: application/json");
 $v = json_decode(stripslashes($_GET["data"]));
-$name = $v->name;
-$number = $v->phone;
-$from = $v->from;
+$name = strip_tags($v->name);
+$number = strip_tags($v->phone);
+$from = strip_tags($v->from);
 
-$place = $v->place;//Что нужно отремонтировать
-$placesize = $v->placesize; //Площадь помещения, м
-$type = $v->type; //Тип недвижимости
-$view = $v->view; //Вид ремонта
-$services = $v->services; //доп.услуги
-$expectedprice = $v->expectedprice; //цена из калькулятора
-$worktime = $v->worktime; //время ремонта из калькулятора
-$location = $v->location; //локация
+$place = strip_tags($v->place);//Что нужно отремонтировать
+$placesize = strip_tags($v->placesize); //Площадь помещения, м
+$type = strip_tags($v->type); //Тип недвижимости
+$view = strip_tags($v->view); //Вид ремонта
+$services = strip_tags($v->services); //доп.услуги
+$expectedprice = strip_tags($v->expectedprice); //цена из калькулятора
+$worktime = strip_tags($v->worktime); //время ремонта из калькулятора
+$location = strip_tags($v->location); //локация
 
 
 
@@ -43,12 +43,12 @@ if($from =='calculate'){
 	$Sub = "Калькуляция цены - $location";
 	$Mail = "Имя - $name \nТелефон - $number\n\nЧто нужно отремонтировать - $place\nПлощадь помещения - $placesize\nТип недвижимости - $type\nВид ремонта - $view\nДоп.услуги - $services\nРисчитанная цена - $expectedprice руб.\nРасчетное время - $worktime";
 }
-// if()
+
 
 // Настройки
 $mail = new PHPMailer;
-// $mail->IsSMTP();  на локальном косте не работает
-// $mail->IsSMTP();
+// $mail->IsSMTP();  на локальном хосте не работает
+$mail->IsSMTP();
 $mail->Host = $_ENV['mail_server']; 
 $mail->SMTPAuth = true; 
 $mail->Username = $_ENV['mail_login']; // Ваш логин для smtp
