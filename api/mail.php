@@ -19,7 +19,7 @@ $number = $v->phone;
 $from = $v->from;
 
 $place = $v->place;//Что нужно отремонтировать
-$placepize = $v->placesize; //Площадь помещения, м
+$placesize = $v->placesize; //Площадь помещения, м
 $type = $v->type; //Тип недвижимости
 $view = $v->view; //Вид ремонта
 $services = $v->services; //доп.услуги
@@ -41,14 +41,14 @@ if($from == 'inline'){
 
 if($from =='calculate'){
 	$Sub = "Калькуляция цены - $location";
-	$Mail = "Имя - $name \nТелефон - $number\n\nЧто нужно отремонтировать - $place\nПлощадь помещения - $placesize\nТип недвижимости - $type\nВид ремонта - $view\nДоп.услуги - $services\n\nРисчитанная цена - $expectedprice руб.\n\nРасчетное время - $worktime";
+	$Mail = "Имя - $name \nТелефон - $number\n\nЧто нужно отремонтировать - $place\nПлощадь помещения - $placesize\nТип недвижимости - $type\nВид ремонта - $view\nДоп.услуги - $services\nРисчитанная цена - $expectedprice руб.\nРасчетное время - $worktime";
 }
 // if()
 
 // Настройки
 $mail = new PHPMailer;
 // $mail->IsSMTP();  на локальном косте не работает
-$mail->IsSMTP();
+// $mail->IsSMTP();
 $mail->Host = $_ENV['mail_server']; 
 $mail->SMTPAuth = true; 
 $mail->Username = $_ENV['mail_login']; // Ваш логин для smtp

@@ -2349,6 +2349,8 @@ body {
     .tabs-line {
         margin-right: -40px;
         padding-left: 40px;
+        padding-right: 40px;
+        margin-right: -40px;
     }
 }
 
@@ -2357,6 +2359,7 @@ body {
         margin-right: -30px;
         margin-left: -30px;
         padding-left: 30px;
+        padding-right: 30px;
     }
 }
 

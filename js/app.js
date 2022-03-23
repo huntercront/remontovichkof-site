@@ -33,6 +33,11 @@ function setCurentTab(tab) {
     tabIndicator.style.left = tab.offsetLeft + "px";
     tabIndicator.style.width = tab.offsetWidth + "px";
     tab.classList.add("active");
+
+
+    document.querySelector('.tab-btn.active').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+
 }
 
 let tabs = document.querySelectorAll('.tab-btn')
@@ -47,6 +52,8 @@ tabs.forEach(function(tab) {
         let newActive = document.querySelector('[ tab-content="' + tab.getAttribute('data-tab') + '"]');
         newActive.classList.add('active-tab')
         setCurentTab(tab);
+
+
 
     })
 })
@@ -470,7 +477,7 @@ dateForm.addEventListener('submit', function(e) {
         type: type.value,
         view: view.value,
         services: services.value,
-        placesize: parseInt(placeSize.value),
+        placesize: placeSize.value + ' m2',
         expectedprice: parseInt(curentPay),
         worktime: workdays,
         location: userlocation
