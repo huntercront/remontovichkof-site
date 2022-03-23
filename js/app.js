@@ -234,7 +234,7 @@ let last_known_scroll_position = 0;
 let ticking = false;
 
 function doSomething(scroll_pos) {
-    if (scroll_pos > header.offsetHeight * 2) {
+    if (scroll_pos > header.offsetHeight * 1.2) {
         header.classList.add('header-light')
     } else {
         header.classList.remove('header-light')
@@ -344,7 +344,9 @@ textInputs.forEach(function(textInput) {
     textInput.addEventListener('click', function(e) {
         inputWrapper.classList.add('focused');
     })
-
+    textInput.addEventListener('focus', function(e) {
+        inputWrapper.classList.add('focused');
+    })
     textInput.addEventListener('blur', function(e) {
         inputWrapper.classList.remove('focused');
     })
@@ -379,7 +381,7 @@ dropValues.forEach(function(dropValue) {
         if (dropValue.getAttribute('data-k')) {
             recalc(dropInput, dropValue.getAttribute('data-k'), false);
         } else {
-            recalc(dropInput, dropValue.getAttribute('data-price'), true);
+            recalc(dropInput, dropValue.getAttribute('data-price'), true, dropValue.getAttribute('data-days'));
         }
 
     })
@@ -395,9 +397,10 @@ document.body.addEventListener('click', function(e) {
 })
 
 
+
+let modalOverlay = document.querySelector('.overlay')
 document.body.classList.remove('loading');
 let calculate = document.querySelector('.hero-form .btn.main-btn');
-let toast = document.querySelector('.toast');
 
 let place = document.querySelector('#for');
 let type = document.querySelector('#type');
@@ -407,6 +410,8 @@ let placeSize = document.querySelector('#place-size');
 
 let discountText = document.querySelector('.discount-value .indicator-value')
 let discount = document.querySelector('.discount-value .indicator-line')
+let workTime = document.querySelector('.days-value .indicator-value')
+let workIndicator = document.querySelector('.days-value .indicator-line')
 
 var curentK = 1;
 var curentPrice = 0;
@@ -430,9 +435,18 @@ nextMadal.addEventListener('click', function(e) {
 })
 
 
+let modals = document.querySelectorAll('.modal-dialog')
+modals.forEach(function(modal) {
+    modal.addEventListener('click', function(event) {
+        if (event.target !== event.currentTarget) return;
+        modal.closest('.modal').classList.remove('open');
+        modalOverlay.classList.remove('active')
+    })
+})
 let consult = document.querySelector('.steps-info .main-btn')
 consult.addEventListener('click', function(e) {
     dateModal.classList.add('open');
+    modalOverlay.classList.add('active');
     header.classList.add('header-light');
     dateModal.setAttribute('from', 'consult')
 })
@@ -442,6 +456,11 @@ dateForm.addEventListener('submit', function(e) {
 
     let userName = document.querySelector('.modal-form #name')
     let userPhone = document.querySelector('.modal-form #tel')
+    let rightsAccept = dateForm.querySelector('.modal-form  #personal-data-modal')
+    let workdays = place.closest('.input').getAttribute('curent-days') + ' дней';
+    let userlocation = YMaps.location.region + ' ,' + YMaps.location.city;
+
+    let curentToast = dateForm.querySelector('.toast')
 
     var params = {
         from: dateModal.getAttribute('from'),
@@ -452,48 +471,122 @@ dateForm.addEventListener('submit', function(e) {
         view: view.value,
         services: services.value,
         placesize: parseInt(placeSize.value),
-        expectedprice: parseInt(curentPay)
+        expectedprice: parseInt(curentPay),
+        worktime: workdays,
+        location: userlocation
     };
-    var url = "../api/mail.php?data=" + encodeURIComponent(JSON.stringify(params));
-    xhttp = new XMLHttpRequest();
-    xhttp.open("get", url, true);
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.onload = function() {
-        if (xhttp.readyState == 4 && xhttp.status === 200 && xhttp.responseText) {
-            dateModal.classList.remove('open');
-            sucsessModal.classList.add('open');
-        } else if (xhttp.status !== 200 || !xhttp.responseText) {
 
-        }
-    };
-    xhttp.send();
+    console.log(params)
+    let inputs = [userName, userPhone, rightsAccept]
+    if (userName.value == '' || userPhone.value == '' || rightsAccept.checked == false) {
+
+        showToast(curentToast, inputs)
+    } else {
+
+        var url = "../api/mail.php?data=" + encodeURIComponent(JSON.stringify(params));
+        xhttp = new XMLHttpRequest();
+        xhttp.open("get", url, true);
+        xhttp.setRequestHeader('Content-Type', 'application/json');
+        xhttp.onload = function() {
+            if (xhttp.readyState == 4 && xhttp.status === 200 && xhttp.responseText) {
+                dateModal.classList.remove('open');
+                sucsessModal.classList.add('open');
+                cleanInputs(inputs);
+            } else if (xhttp.status !== 200 || !xhttp.responseText) {
+
+            }
+        };
+        xhttp.send();
+    }
 })
+
+
+String.prototype.allReplace = function(obj) {
+    var retStr = this;
+    for (var x in obj) {
+        retStr = retStr.replace(new RegExp(x, 'g'), obj[x]);
+    }
+    return retStr;
+};
+
+
+function cleanInputs(inputs) {
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].closest('.input').classList.contains('checkbox')) {
+            inputs[i].checked = false;
+        } else {
+            inputs[i].value = '';
+            inputs[i].closest('.input').classList.remove('value-entered')
+        }
+    }
+}
+
+function showToast(toast, arrInputs) {
+    var errorText = '';
+    var errorLabel = toast.querySelector('.error-text')
+
+    errorLabel.textContent = '';
+    for (let i = 0; i < arrInputs.length; i++) {
+        if (arrInputs[i].value == '') {
+            if (errorText != '') {
+                errorText = errorText + ', ' + arrInputs[i].closest('.input').querySelector('.label').textContent;
+            } else {
+                errorText = errorText + arrInputs[i].closest('.input').querySelector('.label').textContent;
+            }
+        } else if (arrInputs[i].checked == false && arrInputs[i].closest('.input').classList.contains('checkbox')) {
+            if (errorText != '') {
+                errorText = errorText + ', ' + arrInputs[i].closest('.input').querySelector('span').textContent
+            } else {
+                errorText = errorText + arrInputs[i].closest('.input').querySelector('span').textContent
+            }
+        }
+    }
+
+    errorLabel.textContent = errorText.allReplace({ 'Введите имя': 'Имя', 'Нажимая на кнопку вы даете согласие на обработку персональных данных': 'Cогласие на обработку персональных данных' })
+
+    toast.classList.add('error');
+    setTimeout(() => {
+        toast.classList.remove('error');
+    }, toast.getAttribute('data-time'));
+}
 
 let inlineForm = document.querySelector('.inline-form');
 let inlineFormSubmit = document.querySelector('.inline-form .btn')
 inlineForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    let userName = inlineForm.querySelector('#name-land')
-    let userPhone = inlineForm.querySelector('#tel-land')
+    let userName = inlineForm.querySelector('#name-land');
+    let userPhone = inlineForm.querySelector('#tel-land');
+    let rightsAccept = inlineForm.querySelector('#personal-data-page')
+    let userlocation = YMaps.location.region + ' ,' + YMaps.location.city;
+    let curentToast = inlineForm.querySelector('.toast')
 
     var params = {
         from: 'inline',
         name: userName.value,
-        phone: userPhone.value
+        phone: userPhone.value,
+        location: userlocation
     };
-    var url = "../api/mail.php?data=" + encodeURIComponent(JSON.stringify(params));
-    xhttp = new XMLHttpRequest();
-    xhttp.open("get", url, true);
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.onload = function() {
-        if (xhttp.readyState == 4 && xhttp.status === 200 && xhttp.responseText) {
-            sucsessModal.classList.add('open');
-        } else if (xhttp.status !== 200 || !xhttp.responseText) {
 
-        }
-    };
-    xhttp.send();
+    let inputs = [userName, userPhone, rightsAccept]
+    if (userName.value == '' || userPhone.value == '' || rightsAccept.checked == false) {
+        showToast(curentToast, inputs)
+    } else {
+        var url = "../api/mail.php?data=" + encodeURIComponent(JSON.stringify(params));
+        xhttp = new XMLHttpRequest();
+        xhttp.open("get", url, true);
+        xhttp.setRequestHeader('Content-Type', 'application/json');
+        xhttp.onload = function() {
+            if (xhttp.readyState == 4 && xhttp.status === 200 && xhttp.responseText) {
+                sucsessModal.classList.add('open');
+                modalOverlay.classList.add('active');
+                cleanInputs(inputs);
+            } else if (xhttp.status !== 200 || !xhttp.responseText) {
+
+            }
+        };
+        xhttp.send();
+    }
 })
 
 
@@ -501,14 +594,29 @@ inlineForm.addEventListener('submit', function(e) {
 
 
 calculate.addEventListener('click', function(e) {
-    if (place.value == '' || placeSize.value == '') {
-        toast.classList.add('error');
+    let curentToast = calculate.closest('.btn-wrapper').querySelector('.toast')
+    let errorText = curentToast.querySelector('.error-text')
+    if (place.value == '' || placeSize.value == '' || type.value == '' || view.value == '') {
+        errorText.innerHTML = '';
+        let errorVulues = [place, placeSize, type, view]
+        for (let i = 0; i < errorVulues.length; i++) {
+            if (errorVulues[i].value == '') {
+                if (i > 0) {
+                    errorText.innerHTML = errorText.innerHTML + ', ' + errorVulues[i].closest('.input').querySelector('.label').innerHTML;
+                } else {
+                    errorText.innerHTML = errorText.innerHTML + errorVulues[i].closest('.input').querySelector('.label').innerHTML;
+                }
+            }
+        }
+        curentToast.classList.add('error');
         setTimeout(() => {
-            toast.classList.remove('error');
-        }, 1500);
+            curentToast.classList.remove('error');
+        }, curentToast.getAttribute('data-time'));
     } else {
         calcModal.classList.add('open')
         header.classList.add('header-light')
+        modalOverlay.classList.add('active')
+
     }
 })
 
@@ -516,14 +624,20 @@ let closeModals = document.querySelectorAll('.close-modal')
 closeModals.forEach(function(closeModal) {
     closeModal.addEventListener('click', function(e) {
         closeModal.closest('.modal').classList.remove('open');
-        header.classList.remove('header-light')
+        if (window.scrollY < header.offsetHeight * 1.2) {
+            header.classList.remove('header-light')
+        }
+        modalOverlay.classList.remove('active')
     })
 })
-
 
 placeSize.addEventListener('input', function(e) {
     updatePrice()
 })
+
+
+
+
 
 function updatePrice() {
     let selectedType = place.closest('.input');
@@ -536,7 +650,22 @@ function updatePrice() {
         document.querySelector('.start-price').textContent = curentPay - actualDiscount;
         document.querySelector('.end-price').textContent = curentPay + actualDiscount;
         document.querySelector('.discount-number').textContent = actualDiscount;
-        document.querySelector('.price-info  .size').textContent = placeSize.value;
+        document.querySelector('.price-info .size').textContent = placeSize.value;
+
+        let workPeriod = selectedType.getAttribute('curent-days');
+        let workStart = workPeriod.split('-')[0];
+        let workEnd = workPeriod.split('-')[1];
+        workTime.textContent = 'от ' + workStart + ' до ' + workEnd + ' дней';
+        workIndicator.style.width = workStart + '%';
+        document.querySelector('.price-info .days').textContent = 'от ' + workStart + ' до ' + workEnd;
+        document.querySelector('.r-type').textContent = view.value;
+
+        let rPlace = document.querySelector('.r-place')
+
+        var text = place.value.allReplace({ 'комнатная': 'комнатной', 'квартира': 'квартиры', 'Комната': 'комнаты', 'Ванная': 'ванной', 'Туалет': 'туалета', 'Коридор': 'коридора', 'Загородный': 'pагородного', 'дом': 'дома', 'Кухня': 'кухни' })
+
+        rPlace.textContent = text;
+        //  = place.value
     }
 
 }
@@ -545,17 +674,19 @@ function rounded(number) {
     return +number.toFixed(2);
 }
 
-function recalc(input, value, isPrice) {
+function recalc(input, value, isPrice, workDays) {
     let inputWrapper = input.closest('.input');
     if (!isPrice) {
         curentK = rounded(curentK / inputWrapper.getAttribute('curent-k') * value);
-        inputWrapper.setAttribute('curent-k', value)
+        inputWrapper.setAttribute('curent-k', value);
         console.log(curentK);
     } else {
-        inputWrapper.setAttribute('curent-price', value)
+        inputWrapper.setAttribute('curent-price', value);
+        inputWrapper.setAttribute('curent-days', workDays);
     }
-    updatePrice()
+    updatePrice();
 }
+
 let checkInputs = document.querySelectorAll('.drop-zone input[type=checkbox]');
 checkInputs.forEach(function(checkInput) {
     checkInput.addEventListener('input', function(e) {
@@ -564,7 +695,6 @@ checkInputs.forEach(function(checkInput) {
         let mainInput = mainInputWrapper.querySelector('input[type=text]');
         var totalChecked = 0;
         var value = '';
-
 
         for (var checkbox of checkInputs) {
             if (checkbox.checked) {
@@ -577,8 +707,6 @@ checkInputs.forEach(function(checkInput) {
 
             }
         }
-
-
         if (totalChecked > 0) {
             mainInput.value = value
             mainInputWrapper.classList.add('value-entered')
