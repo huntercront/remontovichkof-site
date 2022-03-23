@@ -2287,6 +2287,10 @@ body {
     padding: 7.5rem 0;
 }
 
+.tabs-line {
+    scroll-behavior: smooth;
+}
+
 @media screen and (max-width:1440px) {
     .tab-content {
         column-gap: 3.75rem;
