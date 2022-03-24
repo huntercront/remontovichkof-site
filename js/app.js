@@ -35,7 +35,7 @@ function setCurentTab(tab) {
     tab.classList.add("active");
 
 
-    document.querySelector('.tab-btn.active').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
 
 
 }
@@ -52,7 +52,9 @@ tabs.forEach(function(tab) {
         let newActive = document.querySelector('[ tab-content="' + tab.getAttribute('data-tab') + '"]');
         newActive.classList.add('active-tab')
         setCurentTab(tab);
-
+        if (window.matchMedia("(max-width: 1024px)").matches) {
+            document.querySelector('.tab-btn.active').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
 
 
     })
@@ -71,9 +73,7 @@ menu.addEventListener('click', function(e) {
 })
 
 
-document.addEventListener("DOMContentLoaded", function(event) {
 
-})
 
 
 var l = new Loader();
@@ -228,14 +228,14 @@ l.require([
     function() {}
 );
 
-// setTimeout(() => {
-var l = new Loader();
-l.require([
-        "./js/galery.js"
-    ],
-    function() {});
+setTimeout(() => {
+    var l = new Loader();
+    l.require([
+            "./js/galery.js"
+        ],
+        function() {});
+}, 2000);
 
-// }, 2000);
 
 let last_known_scroll_position = 0;
 let ticking = false;
@@ -297,6 +297,14 @@ if (!map_loaded) {
     map_container.addEventListener('mouseenter', start_lazy_map, options_map);
 }
 
+let coordinateX = document.querySelector('.c-adress').getAttribute('data-cordinate-x');
+let coordinateY = document.querySelector('.c-adress').getAttribute('data-cordinate-y');
+
+let compAddress = document.querySelector('.c-adress .title-h6').textContent;
+
+// [59.91313956420063, 30.369578499999943]
+
+
 function start_lazy_map() {
     if (!map_loaded) {
         map_loaded = true;
@@ -307,23 +315,19 @@ function start_lazy_map() {
             function() {
                 ymaps.ready(function() {
                     var myMap = new ymaps.Map('map', {
-                            center: [59.91313956420063, 30.369578499999943],
+                            center: [coordinateX, coordinateY],
                             zoom: 16,
                             controls: ['zoomControl', 'fullscreenControl'],
                             behaviors: ['drag']
                         }, {
                             suppressMapOpenBlock: true,
-                            restrictMapArea: [
-                                [59.838, 29.511],
-                                [60.056, 30.829]
-                            ]
                         }),
                         MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
                             '<div style="background-color: #414141; font-weight: bold;">$[properties.iconContent]</div>'
                         ),
 
                         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                            hintContent: '<div class="hint-map">наб. Обводного канала, д.24 Д, БЦ «Амилен» 1 этаж, офис 28-29</div>',
+                            hintContent: '<div class="hint-map">' + compAddress + '</div>',
                         }, {
                             iconLayout: 'default#image',
                             iconImageHref: '../img/map-pin.svg',
