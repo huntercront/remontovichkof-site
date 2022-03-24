@@ -299,11 +299,7 @@ if (!map_loaded) {
 
 let coordinateX = document.querySelector('.c-adress').getAttribute('data-cordinate-x');
 let coordinateY = document.querySelector('.c-adress').getAttribute('data-cordinate-y');
-
 let compAddress = document.querySelector('.c-adress .title-h6').textContent;
-
-// [59.91313956420063, 30.369578499999943]
-
 
 function start_lazy_map() {
     if (!map_loaded) {
