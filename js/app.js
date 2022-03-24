@@ -602,18 +602,20 @@ inlineForm.addEventListener('submit', function(e) {
 
 calculate.addEventListener('click', function(e) {
     let curentToast = calculate.closest('.btn-wrapper').querySelector('.toast')
-    let errorText = curentToast.querySelector('.error-text')
+    let errorText = curentToast.querySelector('.error-text');
+    var errorCompiled = '';
     if (place.value == '' || placeSize.value == '' || type.value == '' || view.value == '') {
-        errorText.innerHTML = '';
+        errorCompiled = '';
         let errorVulues = [place, placeSize, type, view]
         for (let i = 0; i < errorVulues.length; i++) {
             if (errorVulues[i].value == '') {
-                if (i > 0) {
-                    errorText.innerHTML = errorText.innerHTML + ', ' + errorVulues[i].closest('.input').querySelector('.label').innerHTML;
+                if (errorCompiled != '') {
+                    errorCompiled = errorCompiled + ', ' + errorVulues[i].closest('.input').querySelector('.label').innerHTML;
                 } else {
-                    errorText.innerHTML = errorText.innerHTML + errorVulues[i].closest('.input').querySelector('.label').innerHTML;
+                    errorCompiled = errorCompiled + errorVulues[i].closest('.input').querySelector('.label').innerHTML;
                 }
             }
+            errorText.innerHTML = errorCompiled;
         }
         curentToast.classList.add('error');
         setTimeout(() => {
