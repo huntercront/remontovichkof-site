@@ -214,7 +214,13 @@ l.require([
                 300: 1,
             }
         });
-        setInterval(() => heroSlider.next(), document.querySelector('.hero-slider').getAttribute('data-slide') * 1000)
+        setInterval(() => heroSlider.next(), document.querySelector('.hero-slider').getAttribute('data-slide') * 1000);
+
+        let nextheroSlider = document.querySelector('.hero-form .next');
+        let prevheroSlider = document.querySelector('.hero-form .prew');
+
+        prevheroSlider.addEventListener('click', () => heroSlider.prev());
+        nextheroSlider.addEventListener('click', () => heroSlider.next());
     }
 );
 
@@ -362,6 +368,9 @@ textInputs.forEach(function(textInput) {
             inputWrapper.classList.add('value-entered');
         } else {
             inputWrapper.classList.remove('value-entered');
+        }
+        if (textInput.getAttribute('data-value') == 'text') {
+            textInput.value = textInput.value.replace(/[^a-zа-яё\s]/gi, '');
         }
     })
 })
@@ -732,4 +741,45 @@ checkInputs.forEach(function(checkInput) {
     })
 })
 
+
+
+window.addEventListener("DOMContentLoaded", function() {
+    [].forEach.call(document.querySelectorAll('input[type=tel]'), function(input) {
+
+
+        function setCursorPosition(pos, elem) {
+            elem.focus();
+            if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+            else if (elem.createTextRange) {
+                var range = elem.createTextRange();
+                range.collapse(true);
+                range.moveEnd("character", pos);
+                range.moveStart("character", pos);
+                range.select()
+            }
+        }
+
+        function mask(event) {
+            var matrix = "+7 (___) ___ __-__",
+                i = 0,
+                def = matrix.replace(/\D/g, ""),
+                val = this.value.replace(/\D/g, "");
+            if (def.length >= val.length) val = def;
+            this.value = matrix.replace(/./g, function(a) {
+                return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+            });
+            if (event.type == "blur") {
+                if (this.value.length == 2) {
+                    this.value = "";
+                    this.closest('.input').classList.remove('value-entered')
+                }
+            } else setCursorPosition(this.value.length, this)
+        };
+
+        input.addEventListener("input", mask, false);
+        input.addEventListener("focus", mask, false);
+        input.addEventListener("blur", mask, false);
+        input.addEventListener("keydown", mask, false);
+    });
+});
 // от 120 дней до 240 дней

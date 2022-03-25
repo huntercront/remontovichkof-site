@@ -1317,6 +1317,16 @@ body {
     color: var(--light);
 }
 
+.hero-form {
+    position: relative;
+}
+
+.hero-form .buttons {
+    position: absolute;
+    top: -15.75rem;
+    right: 0;
+}
+
 @media screen and (max-width:1440px) {
     .hero .title-h1 {
         max-width: 44rem;
@@ -1347,12 +1357,18 @@ body {
     .toast {
         padding: 0.5rem;
     }
+    .hero-form .buttons {
+        top: -10.45rem;
+    }
 }
 
 @media screen and (max-width:1024px) {
     .form-inner {
         grid-template-columns: 1fr 1fr 1fr;
         margin-bottom: 5rem;
+    }
+    .hero-form .buttons {
+        display: none;
     }
 }
 
