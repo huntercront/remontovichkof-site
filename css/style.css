@@ -901,7 +901,6 @@ body {
     .modal-slider {
         row-gap: 1.5rem;
     }
-    .galery-inner {}
 }
 
 
@@ -1154,7 +1153,7 @@ body {
     }
 }
 
-@media screen and (max-width:580px) {
+@media screen and (max-width:620px) {
     .header .nav {
         right: 1.25rem;
     }
@@ -2809,6 +2808,15 @@ body {
     border-radius: 0.5rem;
     overflow: hidden;
     background: var(--black);
+}
+
+.review-photo.review-hidden {
+    display: none;
+}
+
+.fslightbox-slide-btn svg {
+    width: 20px;
+    height: 20px;
 }
 
 .review-photo img {

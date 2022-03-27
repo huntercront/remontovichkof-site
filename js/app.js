@@ -451,7 +451,8 @@ nextMadal.addEventListener('click', function(e) {
 })
 
 
-let modals = document.querySelectorAll('.modal-dialog')
+let modals = document.querySelectorAll('.modal-dialog,.modal')
+console.log(modals)
 modals.forEach(function(modal) {
     modal.addEventListener('click', function(event) {
         if (event.target !== event.currentTarget) return;
