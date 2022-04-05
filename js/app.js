@@ -477,7 +477,7 @@ dateForm.addEventListener('submit', function(e) {
     let workdays = place.closest('.input').getAttribute('curent-days') + ' дней';
     let userlocation = document.body.getAttribute('site-location')
     if (userlocation == 'spb') {
-        userlocation = 'Cанкт-петербург'
+        userlocation = 'Санкт-Петербург'
     } else {
         userlocation = 'Москва'
     }
@@ -582,7 +582,7 @@ inlineForm.addEventListener('submit', function(e) {
     let rightsAccept = inlineForm.querySelector('#personal-data-page')
     let userlocation = document.body.getAttribute('site-location')
     if (userlocation == 'spb') {
-        userlocation = 'Cанкт-петербург'
+        userlocation = 'Санкт-Петербург'
     } else {
         userlocation = 'Москва'
     }
