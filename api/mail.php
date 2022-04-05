@@ -31,16 +31,16 @@ $location = strip_tags($v->location); //локация
 
 
 if($from == 'consult'){
-	$Sub = "Заявка на консультацию - $location";
+	$Sub = "Заявка на консультацию - сайт $location";
 	$Mail = "Имя - $name \nТелефон - $number";
 }
 if($from == 'inline'){
-	$Sub = "Заявка на подбор и доставку - $location";
+	$Sub = "Заявка на подбор и доставку - сайт $location";
 	$Mail = "Имя - $name \nТелефон - $number";
 }
 
 if($from =='calculate'){
-	$Sub = "Калькуляция цены - $location";
+	$Sub = "Калькуляция цены - сайт $location";
 	$Mail = "Имя - $name \nТелефон - $number\n\nЧто нужно отремонтировать - $place\nПлощадь помещения - $placesize\nТип недвижимости - $type\nВид ремонта - $view\nДоп.услуги - $services\nРисчитанная цена - $expectedprice руб.\nРасчетное время - $worktime";
 }
 

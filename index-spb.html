@@ -8,16 +8,6 @@
   <title>Готовые решения для новостроек</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./font/stylesheet.css">
-  <script charset="utf-8" src="http://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
-
-  <script>
-   if (YMaps.location.region != '') {
-    if (YMaps.location.region == "Московская область" || YMaps.location.city == "Москва") {
-     window.location.href = 'https://msk.remontovichkof.ru';
-    }
-   }
-  </script>
-
   <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
@@ -25,9 +15,31 @@
   <link rel="mask-icon" href="./fav/safari-pinned-tab.svg" color="#1cb13d">
   <meta name="msapplication-TileColor" content="#1cb13d">
   <meta name="theme-color" content="#1cb13d">
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+   (function(m, e, t, r, i, k, a) {
+    m[i] = m[i] || function() {
+     (m[i].a = m[i].a || []).push(arguments)
+    };
+    m[i].l = 1 * new Date();
+    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+   })
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(88147034, "init", {
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    webvisor: true
+   });
+  </script>
+  <noscript>
+	<div><img src="https://mc.yandex.ru/watch/88147034" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
+  <!-- /Yandex.Metrika counter -->
  </head>
 
- <body class="loading">
+ <body class="loading" site-location="spb">
 
   <div class="overlay"></div>
   <svg width="0" height="0" class="hidden" style="display:none;">
@@ -1008,11 +1020,6 @@
            </div>
 
           </div>
-         </div>
-         <div class="tab-text">
-          <h3 class="title-h4">Дизйн проект</h3>
-          <p class="descr">Проектирование однакомнотной кватртиры
-          </p>
          </div>
         </div>
 
