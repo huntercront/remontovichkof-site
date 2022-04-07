@@ -28,6 +28,8 @@ $worktime = strip_tags($v->worktime); //время ремонта из каль�
 $location = strip_tags($v->location); //локация
 
 
+$mailto = strip_tags($v->mailto);
+
 
 
 if($from == 'consult'){
@@ -62,7 +64,13 @@ $mail->Port = $_ENV['mail_smtp_port']; // порт для smtp
 
 
 $mail->setFrom("send@remontovichkof.ru"); // Ваш Email
-$mail->addAddress("911@remontovichkof.ru"); // Email получателя
+
+if($mailto == 'spb'){
+	$mail->addAddress("911@remontovichkof.ru"); // Email получателя
+}else{
+	$mail->addAddress("info@rebyata-molotki.moscow"); // Email получателя
+}
+
 
  
 // Письмо

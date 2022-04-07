@@ -475,7 +475,9 @@ dateForm.addEventListener('submit', function(e) {
     let userPhone = document.querySelector('.modal-form #tel')
     let rightsAccept = dateForm.querySelector('.modal-form  #personal-data-modal')
     let workdays = place.closest('.input').getAttribute('curent-days') + ' дней';
-    let userlocation = document.body.getAttribute('site-location')
+    let userlocation = document.body.getAttribute('site-location');
+    let mailtosend = userlocation;
+
     if (userlocation == 'spb') {
         userlocation = 'Санкт-Петербург'
     } else {
@@ -495,13 +497,13 @@ dateForm.addEventListener('submit', function(e) {
         placesize: placeSize.value + ' m2',
         expectedprice: parseInt(curentPay),
         worktime: workdays,
-        location: userlocation
+        location: userlocation,
+        mailto: mailtosend
     };
 
     console.log(params)
     let inputs = [userName, userPhone, rightsAccept]
     if (userName.value == '' || userPhone.value == '' || rightsAccept.checked == false) {
-
         showToast(curentToast, inputs)
     } else {
 
@@ -581,6 +583,7 @@ inlineForm.addEventListener('submit', function(e) {
     let userPhone = inlineForm.querySelector('#tel-land');
     let rightsAccept = inlineForm.querySelector('#personal-data-page')
     let userlocation = document.body.getAttribute('site-location')
+    let mailtosend = userlocation;
     if (userlocation == 'spb') {
         userlocation = 'Санкт-Петербург'
     } else {
@@ -593,7 +596,9 @@ inlineForm.addEventListener('submit', function(e) {
         from: 'inline',
         name: userName.value,
         phone: userPhone.value,
-        location: userlocation
+        location: userlocation,
+        mailto: mailtosend
+
     };
 
     let inputs = [userName, userPhone, rightsAccept]
