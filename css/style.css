@@ -208,7 +208,13 @@ picture {
     vertical-align: middle;
     border-style: none;
     width: 100%;
-    height: auto
+    height: auto;
+    display: block;
+}
+
+img.lazy,
+picture.lazy {
+    opacity: 0;
 }
 
 svg {
@@ -1210,10 +1216,26 @@ body {
 }
 
 
+/* slider inits fix */
+
+.hero-slider.slider-inited,
+.slider-zone.slider-inited {
+    display: flex;
+    width: 100%;
+}
+
+.hero-slider.slider-inited .hero-slide {
+    flex: 0 0 100%;
+}
+
+.slider-zone.slider-inited .w-slide {
+    flex: 0 0 100%;
+}
+
+
 /* hero */
 
 .hero {
-    background: var(--green);
     position: relative;
 }
 
