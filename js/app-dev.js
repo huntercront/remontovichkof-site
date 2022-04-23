@@ -25,6 +25,28 @@ Loader.prototype = {
 };
 
 
+
+var l = new Loader();
+l.require([
+        '../js/lazy-load.js'
+    ],
+    function() {
+
+        var callback_loaded = function(element) {
+            element.classList.remove('lazy');
+            if (element.closest('.lazy-img')) {
+                element.closest('.lazy-img').classList.remove('lazy-progress');
+            }
+        };
+
+        Lazy = new LazyLoad({
+            callback_loaded: callback_loaded,
+        });
+    }
+);
+
+
+
 let tabIndicator = document.querySelector('.tab-indicator')
 setCurentTab(document.querySelector('.tab-btn.active'));
 
@@ -76,171 +98,12 @@ menu.addEventListener('click', function(e) {
 
 
 
-var l = new Loader();
-l.require([
-        './js/siema.min.js'
-    ],
-    function() {
-
-        const blogSlider = new Siema({
-            selector: '.slider-zone',
-            duration: 300,
-            easing: 'ease-out',
-            startIndex: 0,
-            draggable: true,
-            multipleDrag: true,
-            threshold: 20,
-            loop: false,
-            rtl: false,
-            perPage: {
-                300: 1,
-            },
-            onChange: checkButton,
-        });
-        let blogLength = blogSlider.innerElements.length;
-        let nextSlider = document.querySelector('.how-works .next');
-        let prevSlider = document.querySelector('.how-works .prew');
-
-        prevSlider.addEventListener('click', () => blogSlider.prev());
-        nextSlider.addEventListener('click', () => blogSlider.next());
-
-        let slides = document.querySelectorAll('.w-slide');
-        let wTitle = document.querySelector('.step-title .title-h4');
-        let wNumber = document.querySelector('.step-number span');
-        let wDescr = document.querySelector('.step-details p');
-
-        slides.forEach(function(slide, i) {
-            slide.querySelector('.title-h6').addEventListener('click', function(e) {
-                blogSlider.goTo(i)
-            })
-        })
-
-        function checkButton() {
-            let curentSlide = slides[this.currentSlide];
-            document.querySelector('.slide-active').classList.remove('slide-active')
-            curentSlide.classList.add('slide-active')
-            wTitle.textContent = curentSlide.getAttribute('data-title');
-            wNumber.textContent = this.currentSlide + 1;
-            wDescr.textContent = curentSlide.getAttribute('data-text');
-        }
-
-
-        Siema.prototype.myltySlides = function() {
-            let prevArrow = this.selector.closest('.tab-galery').querySelector('.prew');
-            let nextArrow = this.selector.closest('.tab-galery').querySelector('.next');
-            prevArrow.addEventListener('click', () => this.prev());
-            nextArrow.addEventListener('click', () => this.next());
-        }
-
-
-        let siemas = document.querySelectorAll('.galery-inner')
-
-        siemas.forEach(function(siema, i) {
-            const instance = new Siema({
-                selector: siema,
-                duration: 300,
-                easing: 'ease-out',
-                startIndex: 0,
-                draggable: true,
-                multipleDrag: true,
-                threshold: 20,
-                loop: false,
-                rtl: false,
-                perPage: {
-                    300: 1,
-                },
-            });
-            instance.myltySlides();
-        })
-
-        let reviews = document.querySelector('.reviews-slider .slider-inner');
-
-        const reviewSlider = new Siema({
-            selector: reviews,
-            duration: 300,
-            easing: 'ease-out',
-            startIndex: 0,
-            draggable: true,
-            multipleDrag: true,
-            threshold: 20,
-            loop: false,
-            rtl: false,
-            perPage: {
-                300: 1,
-                640: 2,
-                956: 3,
-            }
-        });
-        let nextreviewSlider = document.querySelector('.reviews .next');
-        let prevreviewSlider = document.querySelector('.reviews .prew');
-
-        prevreviewSlider.addEventListener('click', () => reviewSlider.prev());
-        nextreviewSlider.addEventListener('click', () => reviewSlider.next());
-
-
-        let msSlider = document.querySelector('.ms-inner');
-
-        const modalSlider = new Siema({
-            selector: msSlider,
-            duration: 300,
-            easing: 'ease-out',
-            startIndex: 0,
-            draggable: true,
-            multipleDrag: true,
-            threshold: 20,
-            loop: false,
-            rtl: false,
-            perPage: {
-                300: 1,
-            }
-        });
-        let nextmodalSlider = document.querySelector('.sucses-modal .next');
-        let prevmodalSlider = document.querySelector('.sucses-modal .prew');
-
-        prevmodalSlider.addEventListener('click', () => modalSlider.prev());
-        nextmodalSlider.addEventListener('click', () => modalSlider.next());
-
-        const heroSlider = new Siema({
-            selector: '.hero-slider',
-            duration: 300,
-            easing: 'ease-out',
-            startIndex: 0,
-            draggable: true,
-            multipleDrag: true,
-            threshold: 20,
-            loop: true,
-            rtl: false,
-            perPage: {
-                300: 1,
-            }
-        });
-        setInterval(() => heroSlider.next(), document.querySelector('.hero-slider').getAttribute('data-slide') * 1000);
-
-        let nextheroSlider = document.querySelector('.hero-form .next');
-        let prevheroSlider = document.querySelector('.hero-form .prew');
-
-        prevheroSlider.addEventListener('click', () => heroSlider.prev());
-        nextheroSlider.addEventListener('click', () => heroSlider.next());
-    }
-);
 
 
 
 
-var l = new Loader();
-l.require([
-        './js/scroll.js'
-    ],
-    function() {}
-);
 
-setTimeout(() => {
-    var l = new Loader();
-    l.require([
-            "./js/galery.js"
-        ],
-        function() {});
-}, 2000);
+
 
 
 let last_known_scroll_position = 0;
@@ -475,7 +338,14 @@ dateForm.addEventListener('submit', function(e) {
     let userPhone = document.querySelector('.modal-form #tel')
     let rightsAccept = dateForm.querySelector('.modal-form  #personal-data-modal')
     let workdays = place.closest('.input').getAttribute('curent-days') + ' дней';
-    let userlocation = YMaps.location.region + ' ,' + YMaps.location.city;
+    let userlocation = document.body.getAttribute('site-location');
+    let mailtosend = userlocation;
+
+    if (userlocation == 'spb') {
+        userlocation = 'Санкт-Петербург'
+    } else {
+        userlocation = 'Москва'
+    }
 
     let curentToast = dateForm.querySelector('.toast')
 
@@ -490,13 +360,13 @@ dateForm.addEventListener('submit', function(e) {
         placesize: placeSize.value + ' m2',
         expectedprice: parseInt(curentPay),
         worktime: workdays,
-        location: userlocation
+        location: userlocation,
+        mailto: mailtosend
     };
 
     console.log(params)
     let inputs = [userName, userPhone, rightsAccept]
     if (userName.value == '' || userPhone.value == '' || rightsAccept.checked == false) {
-
         showToast(curentToast, inputs)
     } else {
 
@@ -575,14 +445,23 @@ inlineForm.addEventListener('submit', function(e) {
     let userName = inlineForm.querySelector('#name-land');
     let userPhone = inlineForm.querySelector('#tel-land');
     let rightsAccept = inlineForm.querySelector('#personal-data-page')
-    let userlocation = YMaps.location.region + ' ,' + YMaps.location.city;
+    let userlocation = document.body.getAttribute('site-location')
+    let mailtosend = userlocation;
+    if (userlocation == 'spb') {
+        userlocation = 'Санкт-Петербург'
+    } else {
+        userlocation = 'Москва'
+    }
+
     let curentToast = inlineForm.querySelector('.toast')
 
     var params = {
         from: 'inline',
         name: userName.value,
         phone: userPhone.value,
-        location: userlocation
+        location: userlocation,
+        mailto: mailtosend
+
     };
 
     let inputs = [userName, userPhone, rightsAccept]
@@ -745,6 +624,182 @@ checkInputs.forEach(function(checkInput) {
 
 
 window.addEventListener("DOMContentLoaded", function() {
+
+
+
+    var l = new Loader();
+    l.require([
+            './js/siema.min.js'
+        ],
+        function() {
+
+            let howWorksSliderSelctor = document.querySelector('.slider-zone')
+            const blogSlider = new Siema({
+                selector: howWorksSliderSelctor,
+                duration: 300,
+                easing: 'ease-out',
+                startIndex: 0,
+                draggable: true,
+                multipleDrag: true,
+                threshold: 20,
+                loop: false,
+                rtl: false,
+                onInit: () => {
+                    howWorksSliderSelctor.classList.remove('slider-inited')
+                },
+                perPage: {
+                    300: 1,
+                },
+                onChange: checkButton,
+            });
+            let blogLength = blogSlider.innerElements.length;
+            let nextSlider = document.querySelector('.how-works .next');
+            let prevSlider = document.querySelector('.how-works .prew');
+
+            prevSlider.addEventListener('click', () => blogSlider.prev());
+            nextSlider.addEventListener('click', () => blogSlider.next());
+
+            let slides = document.querySelectorAll('.w-slide');
+            let wTitle = document.querySelector('.step-title .title-h4');
+            let wNumber = document.querySelector('.step-number span');
+            let wDescr = document.querySelector('.step-details p');
+
+            slides.forEach(function(slide, i) {
+                slide.querySelector('.title-h6').addEventListener('click', function(e) {
+                    blogSlider.goTo(i)
+                })
+            })
+
+            function checkButton() {
+                let curentSlide = slides[this.currentSlide];
+                document.querySelector('.slide-active').classList.remove('slide-active')
+                curentSlide.classList.add('slide-active')
+                wTitle.textContent = curentSlide.getAttribute('data-title');
+                wNumber.textContent = this.currentSlide + 1;
+                wDescr.textContent = curentSlide.getAttribute('data-text');
+            }
+
+
+            Siema.prototype.myltySlides = function() {
+                let prevArrow = this.selector.closest('.tab-galery').querySelector('.prew');
+                let nextArrow = this.selector.closest('.tab-galery').querySelector('.next');
+                prevArrow.addEventListener('click', () => this.prev());
+                nextArrow.addEventListener('click', () => this.next());
+            }
+
+
+            let siemas = document.querySelectorAll('.galery-inner')
+
+            siemas.forEach(function(siema, i) {
+                const instance = new Siema({
+                    selector: siema,
+                    duration: 300,
+                    easing: 'ease-out',
+                    startIndex: 0,
+                    draggable: true,
+                    multipleDrag: true,
+                    threshold: 20,
+                    loop: false,
+                    rtl: false,
+                    perPage: {
+                        300: 1,
+                    },
+                });
+                instance.myltySlides();
+            })
+
+            let reviews = document.querySelector('.reviews-slider .slider-inner');
+
+            const reviewSlider = new Siema({
+                selector: reviews,
+                duration: 300,
+                easing: 'ease-out',
+                startIndex: 0,
+                draggable: true,
+                multipleDrag: true,
+                threshold: 20,
+                loop: false,
+                rtl: false,
+                perPage: {
+                    300: 1,
+                    640: 2,
+                    956: 3,
+                }
+            });
+            let nextreviewSlider = document.querySelector('.reviews .next');
+            let prevreviewSlider = document.querySelector('.reviews .prew');
+
+            prevreviewSlider.addEventListener('click', () => reviewSlider.prev());
+            nextreviewSlider.addEventListener('click', () => reviewSlider.next());
+
+
+            let msSlider = document.querySelector('.ms-inner');
+
+            const modalSlider = new Siema({
+                selector: msSlider,
+                duration: 300,
+                easing: 'ease-out',
+                startIndex: 0,
+                draggable: true,
+                multipleDrag: true,
+                threshold: 20,
+                loop: false,
+                rtl: false,
+                perPage: {
+                    300: 1,
+                }
+            });
+            let nextmodalSlider = document.querySelector('.sucses-modal .next');
+            let prevmodalSlider = document.querySelector('.sucses-modal .prew');
+
+            prevmodalSlider.addEventListener('click', () => modalSlider.prev());
+            nextmodalSlider.addEventListener('click', () => modalSlider.next());
+
+
+            let hiroSliderSelector = document.querySelector('.hero-slider')
+            const heroSlider = new Siema({
+                selector: hiroSliderSelector,
+                duration: 300,
+                easing: 'ease-out',
+                startIndex: 0,
+                draggable: true,
+                multipleDrag: true,
+                threshold: 20,
+                loop: true,
+                rtl: false,
+                onInit: () => {
+                    hiroSliderSelector.classList.remove('slider-inited')
+                },
+                perPage: {
+                    300: 1,
+                }
+            });
+            setInterval(() => heroSlider.next(), hiroSliderSelector.getAttribute('data-slide') * 1000);
+            let nextheroSlider = document.querySelector('.hero-form .next');
+            let prevheroSlider = document.querySelector('.hero-form .prew');
+            prevheroSlider.addEventListener('click', () => heroSlider.prev());
+            nextheroSlider.addEventListener('click', () => heroSlider.next());
+        }
+    );
+
+
+
+    var l = new Loader();
+    l.require([
+            './js/scroll.js'
+        ],
+        function() {}
+    );
+
+    setTimeout(() => {
+        var l = new Loader();
+        l.require([
+                "./js/galery.js"
+            ],
+            function() {});
+    }, 6000);
+
+
     [].forEach.call(document.querySelectorAll('input[type=tel]'), function(input) {
 
 
@@ -783,4 +838,3 @@ window.addEventListener("DOMContentLoaded", function() {
         input.addEventListener("keydown", mask, false);
     });
 });
-// от 120 дней до 240 дней
