@@ -50,7 +50,7 @@ if($from =='calculate'){
 // Настройки
 $mail = new PHPMailer;
 // $mail->IsSMTP();  на локальном хосте не работает
-// $mail->IsSMTP();
+$mail->IsSMTP();
 $mail->Host = $_ENV['mail_server']; 
 $mail->SMTPAuth = true; 
 $mail->Username = $_ENV['mail_login']; // Ваш логин для smtp
